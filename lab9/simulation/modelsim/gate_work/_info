@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/cozyn/Desktop/ECE385/lab9/simulation/modelsim
+vlab9
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1605224275
+!i10b 1
+!s100 95@[g?S:2g[GoSlMURb>f2
+I<@VGEC26dd5O2A0[4RXP`0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 lab9_svo_unit
+S1
+R0
+w1605223845
+8lab9.svo
+Flab9.svo
+L0 31
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1605224273.000000
+!s107 lab9.svo|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+.|lab9.svo|
+!i113 1
+Z5 o-sv -work work
+!s92 -sv -work work +incdir+.
+Z6 tCvgOpt 0
+vtestbench
+R1
+R2
+!i10b 1
+!s100 E;AQ912P=TgT383`VYhCJ2
+IG@JgoWF9>fjLz:SGRmHC:1
+R3
+!s105 testbench_sv_unit
+S1
+R0
+w1604618450
+8C:/Users/cozyn/Desktop/ECE385/lab9/testbench.sv
+FC:/Users/cozyn/Desktop/ECE385/lab9/testbench.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1605224275.000000
+!s107 C:/Users/cozyn/Desktop/ECE385/lab9/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE385/lab9|C:/Users/cozyn/Desktop/ECE385/lab9/testbench.sv|
+!i113 1
+R5
+!s92 -sv -work work +incdir+C:/Users/cozyn/Desktop/ECE385/lab9
+R6

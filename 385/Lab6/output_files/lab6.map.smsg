@@ -1,0 +1,8 @@
+Info (10281): Verilog HDL Declaration information at slc3_sramtop.sv(7): object "Run" differs only in case from object "RUN" in the same scope File: C:/Users/cozyn/Desktop/lab6/lab6/slc3_sramtop.sv Line: 7
+Info (10281): Verilog HDL Declaration information at slc3_sramtop.sv(7): object "Continue" differs only in case from object "CONTINUE" in the same scope File: C:/Users/cozyn/Desktop/lab6/lab6/slc3_sramtop.sv Line: 7
+Warning (10268): Verilog HDL information at PC.sv(30): always construct contains both blocking and non-blocking assignments File: C:/Users/cozyn/Desktop/lab6/lab6/PC.sv Line: 30
+Warning (10273): Verilog HDL warning at HexDriver.sv(26): extended using "x" or "z" File: C:/Users/cozyn/Desktop/lab6/lab6/HexDriver.sv Line: 26
+Info (10281): Verilog HDL Declaration information at datapath.sv(11): object "PC" differs only in case from object "pc" in the same scope File: C:/Users/cozyn/Desktop/lab6/lab6/datapath.sv Line: 11
+Info (10281): Verilog HDL Declaration information at datapath.sv(10): object "MAR" differs only in case from object "mar" in the same scope File: C:/Users/cozyn/Desktop/lab6/lab6/datapath.sv Line: 10
+Info (10281): Verilog HDL Declaration information at datapath.sv(10): object "IR" differs only in case from object "ir" in the same scope File: C:/Users/cozyn/Desktop/lab6/lab6/datapath.sv Line: 10
+Info (10281): Verilog HDL Declaration information at datapath.sv(10): object "MDR" differs only in case from object "mdr" in the same scope File: C:/Users/cozyn/Desktop/lab6/lab6/datapath.sv Line: 10

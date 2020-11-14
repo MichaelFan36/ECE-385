@@ -1,0 +1,15 @@
+module SR1MUX (
+						input logic [2:0] IR_8_6, IR_11_9,
+						input logic SR1MUX_sel,
+						output logic SR1MUX_out);
+						
+						always_comb
+						begin
+							if (SR1MUX_sel) begin
+								SR1MUX_out = IR_11_9;
+							end
+							
+							else begin
+								SR1MUX_out = IR_8_6;
+							end
+endmodule

@@ -1,0 +1,20 @@
+module BEN (
+                input logic Clk, 
+                input logic LD_BEN, 
+                input logic In, 
+
+                output logic BEN
+            );
+						
+						
+				always_ff @ (posedge Clk) begin
+					if (LD_BEN) begin
+						BEN <= In;
+					end
+					
+					else begin
+						BEN <= BEN;
+					end
+				end
+				
+endmodule

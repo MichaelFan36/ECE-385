@@ -1,0 +1,320 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do lab6_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/test_memory.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:08 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/test_memory.sv 
+# -- Compiling module test_memory
+# 
+# Top level modules:
+# 	test_memory
+# End time: 23:51:08 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/synchronizers.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:08 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/synchronizers.sv 
+# -- Compiling module sync
+# -- Compiling module sync_r0
+# -- Compiling module sync_r1
+# 
+# Top level modules:
+# 	sync
+# 	sync_r0
+# 	sync_r1
+# End time: 23:51:08 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/SLC3_2.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:08 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/SLC3_2.sv 
+# -- Compiling package SLC3_2
+# 
+# Top level modules:
+# 	--none--
+# End time: 23:51:08 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/set_CC.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:08 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/set_CC.sv 
+# -- Compiling module CC
+# -- Compiling module nzp_logic
+# -- Compiling module set_CC
+# 
+# Top level modules:
+# 	set_CC
+# End time: 23:51:08 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:08 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv 
+# -- Compiling module R0
+# ** Warning: C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv(14): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module R1
+# ** Warning: C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv(36): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module R2
+# ** Warning: C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv(58): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module R3
+# ** Warning: C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv(80): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module R4
+# ** Warning: C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv(102): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module R5
+# ** Warning: C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv(124): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module R6
+# ** Warning: C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv(146): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module R7
+# ** Warning: C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv(168): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module eight_registers
+# 
+# Top level modules:
+# 	eight_registers
+# End time: 23:51:08 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 8
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/PC.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:09 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/PC.sv 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 23:51:09 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/MUXs.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:09 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/MUXs.sv 
+# -- Compiling module SR1MUX
+# -- Compiling module SR2MUX
+# -- Compiling module DRMUX
+# -- Compiling module ADDR1MUX
+# -- Compiling module ADDR2MUX
+# -- Compiling module MUXs
+# 
+# Top level modules:
+# 	MUXs
+# End time: 23:51:09 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/Mem2IO.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:09 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/Mem2IO.sv 
+# -- Compiling module Mem2IO
+# 
+# Top level modules:
+# 	Mem2IO
+# End time: 23:51:09 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/MDR.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:09 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/MDR.sv 
+# -- Compiling module MDR
+# 
+# Top level modules:
+# 	MDR
+# End time: 23:51:09 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/MAR.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:09 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/MAR.sv 
+# -- Compiling module MAR
+# 
+# Top level modules:
+# 	MAR
+# End time: 23:51:09 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/ISDU.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:09 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/ISDU.sv 
+# -- Compiling module ISDU
+# 
+# Top level modules:
+# 	ISDU
+# End time: 23:51:09 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/IR.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:09 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/IR.sv 
+# -- Compiling module IR
+# 
+# Top level modules:
+# 	IR
+# End time: 23:51:09 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/HexDriver.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:10 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/HexDriver.sv 
+# -- Compiling module HexDriver
+# 
+# Top level modules:
+# 	HexDriver
+# End time: 23:51:10 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/datapath.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:10 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 23:51:10 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/bus_MUXs.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:10 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/bus_MUXs.sv 
+# -- Compiling module bus_MUXs
+# 
+# Top level modules:
+# 	bus_MUXs
+# End time: 23:51:10 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/BEN.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:10 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/BEN.sv 
+# -- Compiling module BEN
+# 
+# Top level modules:
+# 	BEN
+# End time: 23:51:10 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/ALU.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:10 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/ALU.sv 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 23:51:10 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/slc3.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:10 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/slc3.sv 
+# -- Compiling module slc3
+# 
+# Top level modules:
+# 	slc3
+# End time: 23:51:10 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/memory_contents.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:10 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/memory_contents.sv 
+# -- Compiling package memory_contents_sv_unit
+# -- Importing package SLC3_2
+# -- Compiling module memory_parser
+# 
+# Top level modules:
+# 	memory_parser
+# End time: 23:51:10 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/slc3_testtop.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:10 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/slc3_testtop.sv 
+# -- Compiling module slc3_testtop
+# 
+# Top level modules:
+# 	slc3_testtop
+# End time: 23:51:10 on Oct 19,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6 {C:/Users/cozyn/Desktop/lab6v2/lab6/testbench2.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:51:10 on Oct 19,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6" C:/Users/cozyn/Desktop/lab6v2/lab6/testbench2.sv 
+# -- Compiling module testbench2
+# 
+# Top level modules:
+# 	testbench2
+# End time: 23:51:11 on Oct 19,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  testbench2
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" testbench2 
+# Start time: 23:51:11 on Oct 19,2020
+# Loading sv_std.std
+# Loading work.testbench2
+# Loading work.slc3_testtop
+# Loading work.slc3
+# Loading work.datapath
+# Loading work.MUXs
+# Loading work.SR1MUX
+# Loading work.SR2MUX
+# Loading work.DRMUX
+# Loading work.ADDR1MUX
+# Loading work.ADDR2MUX
+# Loading work.eight_registers
+# Loading work.R0
+# Loading work.R1
+# Loading work.R2
+# Loading work.R3
+# Loading work.R4
+# Loading work.R5
+# Loading work.R6
+# Loading work.R7
+# Loading work.ALU
+# Loading work.set_CC
+# Loading work.CC
+# Loading work.nzp_logic
+# Loading work.BEN
+# Loading work.bus_MUXs
+# Loading work.PC
+# Loading work.MAR
+# Loading work.IR
+# Loading work.MDR
+# Loading work.Mem2IO
+# Loading work.ISDU
+# Loading work.test_memory
+# Loading work.SLC3_2
+# Loading work.memory_contents_sv_unit
+# Loading work.memory_parser
+# Loading work.HexDriver
+# Loading work.sync
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: cozyn  Hostname: DESKTOP-1UE9R8H  ProcessID: 22628
+#           Attempting to use alternate WLF file "./wlft3mc262".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3mc262
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 50000 ns
+add wave -position insertpoint  \
+sim:/testbench2/tp/slc/memory_subsystem/HEX3
+add wave -position insertpoint  \
+sim:/testbench2/tp/slc/memory_subsystem/HEX2
+add wave -position insertpoint  \
+sim:/testbench2/tp/slc/memory_subsystem/HEX1
+add wave -position insertpoint  \
+sim:/testbench2/tp/slc/memory_subsystem/HEX0
+add wave -position insertpoint  \
+sim:/testbench2/tp/slc/state_controller/State
+restart -f; run 50000ns
+# End time: 00:24:08 on Oct 20,2020, Elapsed time: 0:32:57
+# Errors: 0, Warnings: 2

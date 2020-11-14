@@ -1,0 +1,9 @@
+module datapath(
+						input logic [15:0] tristate_MUX,
+						output logic [15:0] Global_Bus);
+	always_comb begin
+		Global_Bus = tristate_MUX;
+	end
+	
+endmodule
+	

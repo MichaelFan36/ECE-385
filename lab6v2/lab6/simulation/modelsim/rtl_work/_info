@@ -1,0 +1,1012 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/cozyn/Desktop/lab6v2/lab6/simulation/modelsim
+vADDR1MUX
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1603169469
+!i10b 1
+!s100 ?KX^h4h_lC^G`Sh``BgzN3
+IV[:7c8:FVfBFjL;M9=4I_3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 MUXs_sv_unit
+S1
+R0
+Z5 w1602236852
+Z6 8C:/Users/cozyn/Desktop/lab6v2/lab6/MUXs.sv
+Z7 FC:/Users/cozyn/Desktop/lab6v2/lab6/MUXs.sv
+L0 49
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1603169469.000000
+Z10 !s107 C:/Users/cozyn/Desktop/lab6v2/lab6/MUXs.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/MUXs.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work +incdir+C:/Users/cozyn/Desktop/lab6v2/lab6
+Z14 tCvgOpt 0
+n@a@d@d@r1@m@u@x
+vADDR2MUX
+R1
+R2
+!i10b 1
+!s100 LLUAkY?IhdQEPYRQYfkdD0
+IkK6103V9DfmCGK9E=U0SB3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 68
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@a@d@d@r2@m@u@x
+vALU
+R1
+Z15 !s110 1603169470
+!i10b 1
+!s100 CmCMhbD9zEVG2DUjZW1mH2
+IUj<`jzC;==]4HA9MiX7jA1
+R3
+!s105 ALU_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/ALU.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/ALU.sv
+L0 1
+R8
+r1
+!s85 0
+31
+Z16 !s108 1603169470.000000
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/ALU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/ALU.sv|
+!i113 1
+R12
+R13
+R14
+n@a@l@u
+vBEN
+R1
+R15
+!i10b 1
+!s100 <TUB9Im=FL=RDzXH?36EU1
+Ij[ZJjXYATA@N^_2650hL`0
+R3
+!s105 BEN_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/BEN.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/BEN.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/BEN.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/BEN.sv|
+!i113 1
+R12
+R13
+R14
+n@b@e@n
+vbus_MUXs
+R1
+R15
+!i10b 1
+!s100 YoloF27<^ij7Kla6?^H`m1
+IZb2fKhV<a5nReWJVX>Lm<2
+R3
+!s105 bus_MUXs_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/bus_MUXs.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/bus_MUXs.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/bus_MUXs.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/bus_MUXs.sv|
+!i113 1
+R12
+R13
+R14
+nbus_@m@u@xs
+vCC
+R1
+Z17 !s110 1603169468
+!i10b 1
+!s100 V>3>633Mn>68EQ^SF5Zo72
+IOTn<^_Jhg8Uc>DJ2Ao6=41
+R3
+Z18 !s105 set_CC_sv_unit
+S1
+R0
+R5
+Z19 8C:/Users/cozyn/Desktop/lab6v2/lab6/set_CC.sv
+Z20 FC:/Users/cozyn/Desktop/lab6v2/lab6/set_CC.sv
+L0 1
+R8
+r1
+!s85 0
+31
+Z21 !s108 1603169468.000000
+Z22 !s107 C:/Users/cozyn/Desktop/lab6v2/lab6/set_CC.sv|
+Z23 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/set_CC.sv|
+!i113 1
+R12
+R13
+R14
+n@c@c
+vdatapath
+R1
+R15
+!i10b 1
+!s100 nJ5U7X5i:`d162;LCLYAE0
+I^Qj@`93HMOz7H^hG2=mF^3
+R3
+!s105 datapath_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/datapath.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/datapath.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/datapath.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/datapath.sv|
+!i113 1
+R12
+R13
+R14
+vDRMUX
+R1
+R2
+!i10b 1
+!s100 TV_80m:MaE1ObK@<IC1iP2
+I2JGeke@jYAY05KzUlBgFf2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 33
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@d@r@m@u@x
+veight_registers
+R1
+R17
+!i10b 1
+!s100 HMYC2HbBCAV<<IjV0IP8?0
+I?GA<NcCX7UBdaem>i_A583
+R3
+Z24 !s105 register_sv_unit
+S1
+R0
+R5
+Z25 8C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv
+Z26 FC:/Users/cozyn/Desktop/lab6v2/lab6/register.sv
+L0 177
+R8
+r1
+!s85 0
+31
+R21
+Z27 !s107 C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv|
+Z28 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/register.sv|
+!i113 1
+R12
+R13
+R14
+vHexDriver
+R1
+R15
+!i10b 1
+!s100 aoNm9<72cYcV^MV7L3LoJ2
+I4=DbSe>A21^FIG@O9l6=f1
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/HexDriver.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/HexDriver.sv
+L0 3
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/HexDriver.sv|
+!i113 1
+R12
+R13
+R14
+n@hex@driver
+vIR
+R1
+R2
+!i10b 1
+!s100 V=C_MbV3Dz4UZzfJ5akG51
+IROGCjn:[019O;CZkLf6CZ3
+R3
+!s105 IR_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/IR.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/IR.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/IR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/IR.sv|
+!i113 1
+R12
+R13
+R14
+n@i@r
+vISDU
+R1
+R2
+!i10b 1
+!s100 jjQ892kUABEMQWG0QBl:63
+I4?JJAWZW`RWZZWJSP2PQf2
+R3
+!s105 ISDU_sv_unit
+S1
+R0
+w1602255011
+8C:/Users/cozyn/Desktop/lab6v2/lab6/ISDU.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/ISDU.sv
+Z29 L0 19
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/ISDU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/ISDU.sv|
+!i113 1
+R12
+R13
+R14
+n@i@s@d@u
+vMAR
+R1
+R2
+!i10b 1
+!s100 fQ5zFeP^0XM5jVcCFX7gP0
+I^[1SP]KPkhRe0RC2RLS8]3
+R3
+!s105 MAR_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/MAR.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/MAR.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/MAR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/MAR.sv|
+!i113 1
+R12
+R13
+R14
+n@m@a@r
+vMDR
+R1
+R2
+!i10b 1
+!s100 @z]a13I<2AMo>hD1E6]?10
+IYC]WzUTz=Z@WoDE?lEe4c1
+R3
+!s105 MDR_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/MDR.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/MDR.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/MDR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/MDR.sv|
+!i113 1
+R12
+R13
+R14
+n@m@d@r
+vMem2IO
+R1
+R2
+!i10b 1
+!s100 ZFSW_b6id2_fdB:W]dBVh0
+IZ]5Ta`dV9<Paa65QQ=FKE1
+R3
+!s105 Mem2IO_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/Mem2IO.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/Mem2IO.sv
+Z30 L0 16
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/Mem2IO.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/Mem2IO.sv|
+!i113 1
+R12
+R13
+R14
+n@mem2@i@o
+Xmemory_contents_sv_unit
+R1
+Z31 DXx4 work 6 SLC3_2 0 22 5gXOglj>:?U5g3_LQHnjP0
+VKGeWc7Pcc6A;[5XVN2XYi0
+r1
+!s85 0
+31
+!i10b 1
+!s100 3HBe^oHDgeVH<TZocfCK[0
+IKGeWc7Pcc6A;[5XVN2XYi0
+!i103 1
+S1
+R0
+R5
+Z32 8C:/Users/cozyn/Desktop/lab6v2/lab6/memory_contents.sv
+Z33 FC:/Users/cozyn/Desktop/lab6v2/lab6/memory_contents.sv
+R30
+R8
+R16
+Z34 !s107 C:/Users/cozyn/Desktop/lab6v2/lab6/memory_contents.sv|
+Z35 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/memory_contents.sv|
+!i113 1
+R12
+R13
+R14
+vmemory_parser
+R1
+R31
+DXx4 work 23 memory_contents_sv_unit 0 22 KGeWc7Pcc6A;[5XVN2XYi0
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 o:B0TTcXZa[?Oo3HFa9T;0
+IojoGlkdDG>MR]0:CSLLlH0
+!s105 memory_contents_sv_unit
+S1
+R0
+R5
+R32
+R33
+L0 18
+R8
+R16
+R34
+R35
+!i113 1
+R12
+R13
+R14
+vMUXs
+R1
+R2
+!i10b 1
+!s100 29kCI]f<;aYjJhA@j53jW1
+I=dY:@Ibk1]K:i?;BoRlNW1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 90
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@m@u@xs
+vnzp_logic
+R1
+R17
+!i10b 1
+!s100 P2olLe[`M]]m^P0z9>egL0
+IddXn>D^jMMAi;H0O7TjmM0
+R3
+R18
+S1
+R0
+R5
+R19
+R20
+L0 51
+R8
+r1
+!s85 0
+31
+R21
+R22
+R23
+!i113 1
+R12
+R13
+R14
+vPC
+R1
+R2
+!i10b 1
+!s100 AT<BgGk5SQ@1n[@O1XO]?2
+IFY6MNJKLmj8^W?U9D=hNP3
+R3
+!s105 PC_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/PC.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/PC.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/PC.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/PC.sv|
+!i113 1
+R12
+R13
+R14
+n@p@c
+vR0
+R1
+R17
+!i10b 1
+!s100 g3X5eb@hJ:Wo]5Hn1[iJ32
+ISFce[S@:M6<:ngA21Om7`3
+R3
+R24
+S1
+R0
+R5
+R25
+R26
+L0 1
+R8
+r1
+!s85 0
+31
+R21
+R27
+R28
+!i113 1
+R12
+R13
+R14
+n@r0
+vR1
+R1
+R17
+!i10b 1
+!s100 oDAn=WmRd_NlI3A6nG]z02
+I;KDbjQCR5LYzMQkMfz^Ab1
+R3
+R24
+S1
+R0
+R5
+R25
+R26
+L0 23
+R8
+r1
+!s85 0
+31
+R21
+R27
+R28
+!i113 1
+R12
+R13
+R14
+n@r1
+vR2
+R1
+R17
+!i10b 1
+!s100 ;7f9kTOL9iaTR1K5MR5E80
+I4G>Z2za2c[T69CjeDIRhD1
+R3
+R24
+S1
+R0
+R5
+R25
+R26
+L0 45
+R8
+r1
+!s85 0
+31
+R21
+R27
+R28
+!i113 1
+R12
+R13
+R14
+n@r2
+vR3
+R1
+R17
+!i10b 1
+!s100 @REBNH3jWAV<XZYEEmSaW3
+I=j@A88A=a^K3N?N_L]>Kg3
+R3
+R24
+S1
+R0
+R5
+R25
+R26
+L0 67
+R8
+r1
+!s85 0
+31
+R21
+R27
+R28
+!i113 1
+R12
+R13
+R14
+n@r3
+vR4
+R1
+R17
+!i10b 1
+!s100 [^k]B]oRoM>2]PWRdUS<a3
+I_?zP<k^AR^bozgzMO9oAb2
+R3
+R24
+S1
+R0
+R5
+R25
+R26
+L0 89
+R8
+r1
+!s85 0
+31
+R21
+R27
+R28
+!i113 1
+R12
+R13
+R14
+n@r4
+vR5
+R1
+R17
+!i10b 1
+!s100 NgAl>gaaB03cVA]18V?]23
+Ie[PBSTkLTCBGhbZXgg>^70
+R3
+R24
+S1
+R0
+R5
+R25
+R26
+L0 111
+R8
+r1
+!s85 0
+31
+R21
+R27
+R28
+!i113 1
+R12
+R13
+R14
+n@r5
+vR6
+R1
+R17
+!i10b 1
+!s100 ;g916JO1bBJ_a^f`TQlRV0
+IGEffMHgDkKBhQAS??UFP`2
+R3
+R24
+S1
+R0
+R5
+R25
+R26
+L0 133
+R8
+r1
+!s85 0
+31
+R21
+R27
+R28
+!i113 1
+R12
+R13
+R14
+n@r6
+vR7
+R1
+R17
+!i10b 1
+!s100 9I5SmzJz[iBbdEO5VYL761
+IVLSFD1V@TMiLd;Hg5VY[z1
+R3
+R24
+S1
+R0
+R5
+R25
+R26
+L0 155
+R8
+r1
+!s85 0
+31
+R21
+R27
+R28
+!i113 1
+R12
+R13
+R14
+n@r7
+vset_CC
+R1
+R17
+!i10b 1
+!s100 FZLSiHln?Bc6R1VG[E^gZ0
+IQ<1bQWh0RA3>DHdjCMO0j0
+R3
+R18
+S1
+R0
+R5
+R19
+R20
+L0 66
+R8
+r1
+!s85 0
+31
+R21
+R22
+R23
+!i113 1
+R12
+R13
+R14
+nset_@c@c
+vslc3
+R1
+R15
+!i10b 1
+!s100 Q<D:=Hg]2O;@C?[U_Ze5a3
+II8R[0M9fM;6JDcbYYR@7M0
+R3
+!s105 slc3_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/slc3.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/slc3.sv
+R29
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/slc3.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/slc3.sv|
+!i113 1
+R12
+R13
+R14
+XSLC3_2
+R1
+R17
+!i10b 1
+!s100 Cz8_^@QRefP31?j=Zf>lj0
+I5gXOglj>:?U5g3_LQHnjP0
+V5gXOglj>:?U5g3_LQHnjP0
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/SLC3_2.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/SLC3_2.sv
+L0 24
+R8
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/SLC3_2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/SLC3_2.sv|
+!i113 1
+R12
+R13
+R14
+n@s@l@c3_2
+vslc3_testtop
+R1
+R15
+!i10b 1
+!s100 GWWYH3;PDYHBjlN@Z2`7N0
+Ik??aXeG_b`:7?M:HAZdV]0
+R3
+!s105 slc3_testtop_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/slc3_testtop.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/slc3_testtop.sv
+L0 4
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/slc3_testtop.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/slc3_testtop.sv|
+!i113 1
+R12
+R13
+R14
+vSR1MUX
+R1
+R2
+!i10b 1
+!s100 W>VH2o^]XSEX<YX<Wg]1z1
+InIG2oHRUiig_o?2X`MIFJ1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@s@r1@m@u@x
+vSR2MUX
+R1
+R2
+!i10b 1
+!s100 ?`X7mc`@Y15k2il19K_DQ1
+I[c^DfAGjh2RM36Z;`;b^93
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+R30
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@s@r2@m@u@x
+vsync
+R1
+R17
+!i10b 1
+!s100 OHNUFN]797>kYzRL;ikZR2
+IHV]5cQC7=i58K3IkcNRH;2
+R3
+Z36 !s105 synchronizers_sv_unit
+S1
+R0
+R5
+Z37 8C:/Users/cozyn/Desktop/lab6v2/lab6/synchronizers.sv
+Z38 FC:/Users/cozyn/Desktop/lab6v2/lab6/synchronizers.sv
+L0 7
+R8
+r1
+!s85 0
+31
+R21
+Z39 !s107 C:/Users/cozyn/Desktop/lab6v2/lab6/synchronizers.sv|
+Z40 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/synchronizers.sv|
+!i113 1
+R12
+R13
+R14
+vsync_r0
+R1
+R17
+!i10b 1
+!s100 _Sn:CfHFjznVZen=7jc>C2
+I`g]U5U;^zm`G66ALDhi=T1
+R3
+R36
+S1
+R0
+R5
+R37
+R38
+L0 21
+R8
+r1
+!s85 0
+31
+R21
+R39
+R40
+!i113 1
+R12
+R13
+R14
+vsync_r1
+R1
+R17
+!i10b 1
+!s100 4jfZd?z`MK2Y<NLFC0<QH2
+I9=:?5<U`jQMgPmL1Wb:R90
+R3
+R36
+S1
+R0
+R5
+R37
+R38
+L0 42
+R8
+r1
+!s85 0
+31
+R21
+R39
+R40
+!i113 1
+R12
+R13
+R14
+vtest_memory
+R1
+R17
+!i10b 1
+!s100 JAXhO?6GV:H>``me>_X5<1
+INMcIRK;2UiMgHUHHF;h4<0
+R3
+!s105 test_memory_sv_unit
+S1
+R0
+R5
+8C:/Users/cozyn/Desktop/lab6v2/lab6/test_memory.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/test_memory.sv
+L0 26
+R8
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/test_memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/test_memory.sv|
+!i113 1
+R12
+R13
+R14
+vtestbench2
+R1
+!s110 1603169471
+!i10b 1
+!s100 cZTm3kkA:C6lje[jzm@Zh0
+IBkI<CRG2>cNI`>Y1VRHHZ0
+R3
+!s105 testbench2_sv_unit
+S1
+R0
+w1603169447
+8C:/Users/cozyn/Desktop/lab6v2/lab6/testbench2.sv
+FC:/Users/cozyn/Desktop/lab6v2/lab6/testbench2.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/lab6v2/lab6/testbench2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/lab6v2/lab6|C:/Users/cozyn/Desktop/lab6v2/lab6/testbench2.sv|
+!i113 1
+R12
+R13
+R14

@@ -1,0 +1,16 @@
+module DRMUX (
+						input logic [2:0] IR_11_9, 
+						input logic DRMUX_sel,
+						output logic [2:0] DRMUX_out);
+						
+						always_comb
+						begin
+							if (DRMUX_sel) begin
+								DRMUX_out = IR_11_9;
+							end
+							
+							else begin
+								DRMUX_out = 3'b111;
+							end
+						end
+endmodule

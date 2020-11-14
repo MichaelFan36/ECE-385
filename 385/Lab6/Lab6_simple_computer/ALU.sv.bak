@@ -1,0 +1,5 @@
+module ALU(
+				input logic [15:0] SR1_out, SR2MUX_out,
+				input logic [1:0] ALUK,
+				output logic [15:0] ALU_val
+				);

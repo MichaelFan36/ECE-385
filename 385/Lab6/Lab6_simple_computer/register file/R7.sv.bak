@@ -1,0 +1,20 @@
+module R7 (
+					input logic LD_R7, Reset,
+					input logic [15:0] Data_in,
+					output logic [15:0] R7_val);
+					
+					always_comb
+					begin
+						if (Reset) begin
+							R7_val = 4'h0000;
+						end
+						
+						else if (LD_R7) begin
+							R7_val = Data_in;
+						end
+						
+						else begin
+							R7_val = R7_val;
+						end
+					end
+endmodule

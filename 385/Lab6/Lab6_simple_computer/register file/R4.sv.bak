@@ -1,0 +1,20 @@
+module R4 (
+					input logic LD_R4, Reset,
+					input logic [15:0] Data_in,
+					output logic [15:0] R4_val);
+					
+					always_comb
+					begin
+						if (Reset) begin
+							R4_val = 4'h0000;
+						end
+						
+						else if (LD_R4) begin
+							R4_val = Data_in;
+						end
+						
+						else begin
+							R4_val = R4_val;
+						end
+					end
+endmodule

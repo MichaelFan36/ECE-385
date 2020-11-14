@@ -1,0 +1,883 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/simulation/modelsim
+vADDRMUX
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1602217268
+!i10b 1
+!s100 NonL3:l17<LDCh?hbiFF11
+IXN]662gfko<>YmCT3b=8k0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 ADDRMUX_sv_unit
+S1
+R0
+w1551223164
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ADDRMUX.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ADDRMUX.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1602217268.000000
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ADDRMUX.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ADDRMUX.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work {+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer}
+Z8 tCvgOpt 0
+n@a@d@d@r@m@u@x
+vALU
+R1
+Z9 !s110 1602217267
+!i10b 1
+!s100 GVa40icPYiaEb1f?dQ:?I0
+I2SLUFkU7z0AOH[gYE3N6?2
+R3
+!s105 ALU_sv_unit
+S1
+R0
+w1551325980
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ALU.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ALU.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z10 !s108 1602217267.000000
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ALU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ALU.sv|
+!i113 1
+R6
+R7
+R8
+n@a@l@u
+vBEN
+R1
+Z11 !s110 1602217264
+!i10b 1
+!s100 zgg@ci>@MWZPUo^2k78Cz2
+I6nmF1Non62lMoREM[I9zi1
+R3
+!s105 BEN_sv_unit
+S1
+R0
+w1550959642
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/BEN.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/BEN.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z12 !s108 1602217264.000000
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/BEN.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/BEN.sv|
+!i113 1
+R6
+R7
+R8
+n@b@e@n
+vcondition_code
+R1
+R11
+!i10b 1
+!s100 HPXL8aX70jljVH[C]OXDE0
+IAXgmU[SKA0g[nW?]2:6b`1
+R3
+!s105 Condition_Code_sv_unit
+S1
+R0
+w1551335980
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/Condition_Code.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/Condition_Code.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/Condition_Code.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/Condition_Code.sv|
+!i113 1
+R6
+R7
+R8
+vdatapath
+R1
+Z13 !s110 1602217269
+!i10b 1
+!s100 ?BdESeiT?O;>P8`;0IH]U1
+I77]LGUQd1hHVgHfE@=DH61
+R3
+!s105 datapath_sv_unit
+S1
+R0
+w1551334064
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/datapath.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/datapath.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z14 !s108 1602217269.000000
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/datapath.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/datapath.sv|
+!i113 1
+R6
+R7
+R8
+vDRMUX
+R1
+R9
+!i10b 1
+!s100 WWe`Mnck@0B9S>LzQzZUj1
+IPDLTga097WhIB3A`MR<F:3
+R3
+!s105 DRMUX_sv_unit
+S1
+R0
+w1550958542
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/DRMUX.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/DRMUX.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/DRMUX.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/DRMUX.sv|
+!i113 1
+R6
+R7
+R8
+n@d@r@m@u@x
+vHexDriver
+R1
+Z15 !s110 1602217265
+!i10b 1
+!s100 =R2i165HPJgkY;aA[TRmG3
+I445l=0k]FRPK90;YeFzL`1
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1550013872
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/HexDriver.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/HexDriver.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z16 !s108 1602217265.000000
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/HexDriver.sv|
+!i113 1
+R6
+R7
+R8
+n@hex@driver
+vIR
+R1
+R9
+!i10b 1
+!s100 YdL2E;>0E]5EV1dD6LBL>3
+IX<Hg5HfE9Y]4Z`DZbzmYL3
+R3
+!s105 IR_sv_unit
+S1
+R0
+w1550707168
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/IR.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/IR.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/IR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/IR.sv|
+!i113 1
+R6
+R7
+R8
+n@i@r
+vISDU
+R1
+R11
+!i10b 1
+!s100 XDfegKPlhza1?9IW>Ei6>0
+IJWJHc[2iOBV`:EO;NEOAZ3
+R3
+!s105 ISDU_sv_unit
+S1
+R0
+w1551337586
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ISDU.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ISDU.sv
+Z17 L0 19
+R4
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ISDU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/ISDU.sv|
+!i113 1
+R6
+R7
+R8
+n@i@s@d@u
+vlab6_toplevel
+R1
+R13
+!i10b 1
+!s100 k;XFYEj__@<f`n61h0?<B3
+IVDSiXiH:kKX^K=iMBgGg`3
+R3
+!s105 lab6_toplevel_sv_unit
+S1
+R0
+w1551225488
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/lab6_toplevel.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/lab6_toplevel.sv
+L0 10
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/lab6_toplevel.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/lab6_toplevel.sv|
+!i113 1
+R6
+R7
+R8
+vlogic_set
+R1
+R11
+!i10b 1
+!s100 DPS`jekHFcYA<6Cc4cgB[3
+IFHz39m2JU=A<j5NdQ2Bo22
+R3
+!s105 logic_set_sv_unit
+S1
+R0
+w1551333684
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/logic_set.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/logic_set.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/logic_set.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/logic_set.sv|
+!i113 1
+R6
+R7
+R8
+vMAR
+R1
+R9
+!i10b 1
+!s100 k42Y@OhgGBB7Pe5e_YKMW1
+IOHhO[X=IhQ;=9HGih6ZMP0
+R3
+!s105 MAR_sv_unit
+S1
+R0
+w1550707170
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/MAR.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/MAR.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/MAR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/MAR.sv|
+!i113 1
+R6
+R7
+R8
+n@m@a@r
+vMDR
+R1
+R15
+!i10b 1
+!s100 <LnN4oS<DPAA9GmL>PSFF1
+IVn8E[blX7@EPHY>Om=7DM2
+R3
+!s105 MDR_sv_unit
+S1
+R0
+w1550725656
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/MDR.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/MDR.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/MDR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/MDR.sv|
+!i113 1
+R6
+R7
+R8
+n@m@d@r
+vMem2IO
+R1
+R15
+!i10b 1
+!s100 d<=A`]_5?F8Tz<i9:]04<3
+IoHBZMjf^nWdcdoIWCDL@30
+R3
+!s105 Mem2IO_sv_unit
+S1
+R0
+w1550621868
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/Mem2IO.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/Mem2IO.sv
+Z18 L0 16
+R4
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/Mem2IO.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/Mem2IO.sv|
+!i113 1
+R6
+R7
+R8
+n@mem2@i@o
+Xmemory_contents_sv_unit
+R1
+Z19 DXx4 work 6 SLC3_2 0 22 ;mNNV[:H;k3laaDK=mUAc3
+VGXhe[_GBI[5DjhlC=f`260
+r1
+!s85 0
+31
+!i10b 1
+!s100 c2m7WKcaV<L[XVf`30RGj3
+IGXhe[_GBI[5DjhlC=f`260
+!i103 1
+S1
+R0
+Z20 w1551936654
+Z21 8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/memory_contents.sv
+Z22 FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/memory_contents.sv
+L0 14
+R4
+R14
+Z23 !s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/memory_contents.sv|
+Z24 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/memory_contents.sv|
+!i113 1
+R6
+R7
+R8
+vmemory_parser
+R1
+R19
+DXx4 work 23 memory_contents_sv_unit 0 22 GXhe[_GBI[5DjhlC=f`260
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 744B[g>P4=Q9zVQXU8>HF2
+I=0]L`I0L^YHcL4TaJO6Ci1
+!s105 memory_contents_sv_unit
+S1
+R0
+R20
+R21
+R22
+R18
+R4
+R14
+R23
+R24
+!i113 1
+R6
+R7
+R8
+vPC
+R1
+R15
+!i10b 1
+!s100 B[@3:QSSW2Nm]J?e:@7jK1
+I=n0PoH@SLXRPZVS0FbN`:1
+R3
+!s105 PC_sv_unit
+S1
+R0
+w1551217730
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/PC.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/PC.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/PC.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/PC.sv|
+!i113 1
+R6
+R7
+R8
+n@p@c
+vR0
+R1
+R2
+!i10b 1
+!s100 XVHLKbf3e<QzJbL]CnNWe1
+ILKZRaLBENSCY3ei1kn`P92
+R3
+Z25 !s105 register_8_sv_unit
+S1
+R0
+Z26 w1551331856
+Z27 8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/register_8.sv
+Z28 FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/register_8.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+Z29 !s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/register_8.sv|
+Z30 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/register_8.sv|
+!i113 1
+R6
+R7
+R8
+n@r0
+vR1
+R1
+R2
+!i10b 1
+!s100 27[_]<2??3[gA5ciBQj]]3
+IaSZ=_23_8>O4F@00VZn870
+R3
+R25
+S1
+R0
+R26
+R27
+R28
+Z31 L0 22
+R4
+r1
+!s85 0
+31
+R5
+R29
+R30
+!i113 1
+R6
+R7
+R8
+n@r1
+vR2
+R1
+R2
+!i10b 1
+!s100 S[AUII:kk94=LSAifMQWD1
+I24NHfSDLk]nQkTQH0lB=E2
+R3
+R25
+S1
+R0
+R26
+R27
+R28
+L0 43
+R4
+r1
+!s85 0
+31
+R5
+R29
+R30
+!i113 1
+R6
+R7
+R8
+n@r2
+vR3
+R1
+R2
+!i10b 1
+!s100 [inRbE?L0^4Y5B1G2X0;?0
+ITDVI6EieZdOY?Y;SPA1kH0
+R3
+R25
+S1
+R0
+R26
+R27
+R28
+L0 64
+R4
+r1
+!s85 0
+31
+R5
+R29
+R30
+!i113 1
+R6
+R7
+R8
+n@r3
+vR4
+R1
+R2
+!i10b 1
+!s100 680j_dA43GQcGgRhF87TO3
+IG8D5Z;gJ8]EbYbbWcD2ff1
+R3
+R25
+S1
+R0
+R26
+R27
+R28
+L0 85
+R4
+r1
+!s85 0
+31
+R5
+R29
+R30
+!i113 1
+R6
+R7
+R8
+n@r4
+vR5
+R1
+R2
+!i10b 1
+!s100 bTG:XX@lGFElnj7VHd^AM2
+I1?F:h=KmSjXnG7oL>TaiR0
+R3
+R25
+S1
+R0
+R26
+R27
+R28
+L0 106
+R4
+r1
+!s85 0
+31
+R5
+R29
+R30
+!i113 1
+R6
+R7
+R8
+n@r5
+vR6
+R1
+R2
+!i10b 1
+!s100 nP]0>WNnj[W>J1;nD6BHI1
+I?Nm;>ad>:3?<WccmIjDS21
+R3
+R25
+S1
+R0
+R26
+R27
+R28
+L0 127
+R4
+r1
+!s85 0
+31
+R5
+R29
+R30
+!i113 1
+R6
+R7
+R8
+n@r6
+vR7
+R1
+R2
+!i10b 1
+!s100 eQ]N=6Z1C;GE=CnTC8UA31
+I4VMT_?:W0hV?99NlICoGA2
+R3
+R25
+S1
+R0
+R26
+R27
+R28
+L0 148
+R4
+r1
+!s85 0
+31
+R5
+R29
+R30
+!i113 1
+R6
+R7
+R8
+n@r7
+vregister_file
+R1
+R13
+!i10b 1
+!s100 YX8z[eKloEYLJYVY`>c6a0
+Ig_=[3[F>badJdGI^onc0K2
+R3
+!s105 register_file_sv_unit
+S1
+R0
+w1550977920
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/register_file.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/register_file.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/register_file.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/register_file.sv|
+!i113 1
+R6
+R7
+R8
+vslc3
+R1
+R13
+!i10b 1
+!s100 4XKlIL3:FWYhk=<fh:]mE1
+IQDAH5eJ_8;><nEONEh90D3
+R3
+!s105 slc3_sv_unit
+S1
+R0
+w1551320096
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/slc3.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/slc3.sv
+R17
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/slc3.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/slc3.sv|
+!i113 1
+R6
+R7
+R8
+XSLC3_2
+R1
+R15
+!i10b 1
+!s100 Cz8_^@QRefP31?j=Zf>lj0
+I;mNNV[:H;k3laaDK=mUAc3
+V;mNNV[:H;k3laaDK=mUAc3
+S1
+R0
+Z32 w1550367504
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SLC3_2.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SLC3_2.sv
+L0 24
+R4
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SLC3_2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SLC3_2.sv|
+!i113 1
+R6
+R7
+R8
+n@s@l@c3_2
+vSR1MUX
+R1
+R9
+!i10b 1
+!s100 QFPM<<Tai?2of`5]TLGC30
+IX_L9MdZD;M:LlKgiZZUYa3
+R3
+!s105 SR1MUX_sv_unit
+S1
+R0
+w1550977696
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SR1MUX.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SR1MUX.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SR1MUX.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SR1MUX.sv|
+!i113 1
+R6
+R7
+R8
+n@s@r1@m@u@x
+vSR2MUX
+R1
+R9
+!i10b 1
+!s100 PP1a=D68LK7[FlGm9;8;;0
+Ib8Fg3]@Y3TlnkEi9`M>nD2
+R3
+!s105 SR2MUX_sv_unit
+S1
+R0
+w1550976648
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SR2MUX.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SR2MUX.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SR2MUX.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/SR2MUX.sv|
+!i113 1
+R6
+R7
+R8
+n@s@r2@m@u@x
+vtest_memory
+R1
+R15
+!i10b 1
+!s100 AZAU7PQT4]][EEHo>57W43
+IbhcokI9I8VAVQ;aQVRhWT3
+R3
+!s105 test_memory_sv_unit
+S1
+R0
+R32
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/test_memory.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/test_memory.sv
+R31
+R4
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/test_memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/test_memory.sv|
+!i113 1
+R6
+R7
+R8
+vtestbench
+R1
+R13
+!i10b 1
+!s100 f=IYC7[nMzZ:W@UU?^UiZ3
+I3mP14GC78zLlXWYf_n>KZ2
+R3
+!s105 testbench_sv_unit
+S1
+R0
+w1602192162
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/testbench.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/testbench.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/testbench.sv|
+!i113 1
+R6
+R7
+R8
+vtristate
+R1
+R15
+!i10b 1
+!s100 Akazoo=71mOgoH<gVR_UC0
+IS7<bzaO:bM@f2fiH=LE<21
+R3
+!s105 tristate_sv_unit
+S1
+R0
+w1550621878
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/tristate.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/tristate.sv
+R18
+R4
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/tristate.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/tristate.sv|
+!i113 1
+R6
+R7
+R8
+vtristate_MUX
+R1
+R15
+!i10b 1
+!s100 6SYYSPCfZldQCXK6X]fQV3
+IzK^XKWDcY^?ZinfX9UX[D1
+R3
+!s105 tristate_MUX_sv_unit
+S1
+R0
+w1551222362
+8C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/tristate_MUX.sv
+FC:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/tristate_MUX.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/tristate_MUX.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer|C:/Users/cozyn/Desktop/ECE 385/385/Lab6/Lab6_simple_computer/tristate_MUX.sv|
+!i113 1
+R6
+R7
+R8
+ntristate_@m@u@x

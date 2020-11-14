@@ -1,0 +1,13 @@
+
+State Machine - |Processor|control:control_unit|curr_state
+Name curr_state.F curr_state.E1 curr_state.D1 curr_state.C1 curr_state.B1 curr_state.E curr_state.D curr_state.C curr_state.B curr_state.A 
+curr_state.A 0 0 0 0 0 0 0 0 0 0 
+curr_state.B 0 0 0 0 0 0 0 0 1 1 
+curr_state.C 0 0 0 0 0 0 0 1 0 1 
+curr_state.D 0 0 0 0 0 0 1 0 0 1 
+curr_state.E 0 0 0 0 0 1 0 0 0 1 
+curr_state.B1 0 0 0 0 1 0 0 0 0 1 
+curr_state.C1 0 0 0 1 0 0 0 0 0 1 
+curr_state.D1 0 0 1 0 0 0 0 0 0 1 
+curr_state.E1 0 1 0 0 0 0 0 0 0 1 
+curr_state.F 1 0 0 0 0 0 0 0 0 1 

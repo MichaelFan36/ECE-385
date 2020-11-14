@@ -1,0 +1,38 @@
+module register_unit (input  logic Clk, Reset_A, Reset_B, A_In, B_In, Load_A, Load_B,
+                            Shift_En,
+                      input  logic [7:0]  DATA_A,
+                      input  logic  [7:0]  DATA_B,
+                      output logic A_out, B_out,
+                      output logic [7:0]  A,
+                      output logic [7:0]  B);
+
+
+    shift_register  reg_A (.*, .Reset(Reset_A), .Load(Load_A), .Shift_In(A_In), .D(DATA_A),
+	               .Shift_Out(A_out), .Data_Out(A));
+    shift_register  reg_B (.*, .Reset(Reset_B), .Load(Load_B), .Shift_In(B_In), .D(DATA_B),
+	               .Shift_Out(B_out), .Data_Out(B));
+
+endmodule
+
+
+
+module shift_register (input   Clk, Reset, Load, Shift_In, Shift_En,
+							  input   [7:0]  Data_In,
+							  output  Shift_Out,
+							  output  [7:0]  Data_Out);
+
+    always_ff @ (posedge Clk)
+    begin
+	 	 if (Reset) 
+			  Data_Out <= 8'h0;  
+		 else if (Load)
+			  Data_Out <= Data_In;
+		 else if (Shift_En)
+		 begin
+			  Data_Out <= { Shift_In, Data_Out[7:1] };
+	    end
+    end
+
+    assign Shift_Out = Data_Out[0];
+
+endmodule

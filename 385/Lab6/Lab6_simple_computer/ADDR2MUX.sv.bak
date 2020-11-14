@@ -1,0 +1,16 @@
+module ADDR2MUX (
+							input logic [15:0] offset6, offset9, offset11,
+							input logic [1:0] ADDR2MUX,
+							output logic [15:0] ADDR2MUX_out);
+							
+							always_comb
+							begin
+								case (ADDR2MUX)
+									2'b00: ADDR2MUX_out = 4'h0;
+									2'b01: ADDR2MUX_out = offset6;
+									2'b10: ADDR2MUX_out = offset9;
+									2'b11: ADDR2MUX_out = offset11;
+								end
+							end
+endmodule
+							

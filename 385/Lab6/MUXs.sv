@@ -1,0 +1,145 @@
+module  SR1MUX(
+                    input logic [15:0] IR,
+                    input logic select,
+                    output logic [2:0] SR1
+                );
+						
+                always_comb
+                begin
+                    if (select) 
+                        SR1 = IR[8:6];
+                    else 
+                        SR1 = IR[11:9];
+                end
+endmodule
+
+module SR2MUX (
+                    input logic [15:0] IR,
+                    input logic [15:0] SR2_out,
+                    input logic select,
+                    output logic [15:0] SR2
+                );
+						
+                always_comb
+                begin
+                    if (select) 
+                        //SEXT
+                        SR2 = { {11{IR[4]}}, IR[4:0]};
+                    else 
+                        SR2 = SR2_out;
+                end
+endmodule
+
+module DRMUX (
+                input logic [15:0] IR, 
+                input logic select,
+                output logic [2:0] DRMUX
+            );
+            
+            always_comb
+            begin
+                if (select) 
+                    // R7
+                    DRMUX = 3'b111; 
+                else 
+                    DRMUX = IR[11:9];
+            end
+endmodule
+
+module ADDR1MUX (
+                    input logic [15:0] PC, 
+                    input logic [15:0] SR1,
+                    input logic select,
+                    output logic [15:0] ADDR1MUX
+                );
+                    
+                    always_comb
+                    begin
+                        if (select) begin
+                            ADDR1MUX = PC;
+                        end
+                        
+                        else begin
+                            ADDR1MUX = SR1;
+                        end
+                    end
+endmodule
+
+module ADDR2MUX (
+                    input [15:0] IR,
+                    input logic [1:0] select,
+                    output logic [15:0] ADDR2MUX_out
+                );
+
+                always_comb
+                begin
+                    case (select)
+                        2'b00: 
+                            ADDR2MUX_out = 16'd0;
+                        2'b01: 
+                            ADDR2MUX_out = { { 10{IR[5]} }, IR[5:0] };
+                        2'b10: 
+                            ADDR2MUX_out = { { 7{IR[8]}}, IR[8:0] };
+                        2'b11: 
+                            ADDR2MUX_out = { { 5{IR[10]}}, IR[10:0] };
+                    endcase
+                end
+endmodule
+							
+
+module MUXs(
+            input logic [15:0] IR,
+            input logic [15:0] PC,
+            input logic SR1MUX_select, SR2MUX_select, DRMUX_select, ADDR1MUX_select, 
+				input logic [1:0] ADDR2MUX_select,
+            input logic [15:0] SR1_out, SR2_out,
+
+            output logic [2:0] SR1,
+            output logic [2:0] DRMUX,
+            output logic [15:0] ADDRMUX_out, SR2
+            );
+
+
+
+logic [15:0] ADDR1MUX_out, ADDR2MUX_out;
+
+
+SR1MUX _SR1MUX(
+                    .IR(IR),
+                    .select(SR1MUX_select),
+
+                    .SR1(SR1)
+                );
+
+SR2MUX _SR2MUX(
+                    .IR(IR),
+                    .SR2_out(SR2_out),
+                    .select(SR2MUX_select),
+
+                    .SR2(SR2)
+                );
+DRMUX _DRMUX(
+                    .IR(IR),
+                    .select(DRMUX_select),
+
+                    .DRMUX(DRMUX)
+            );
+ADDR1MUX _ADDR1MUX(
+                    .PC(PC), 
+                    .SR1(SR1_out),
+                    .select(ADDR1MUX_select),
+
+                    .ADDR1MUX(ADDR1MUX_out)
+                );
+ADDR2MUX _ADDR2MUX(
+                    .IR(IR),
+                    .select(ADDR2MUX_select),
+
+                    .ADDR2MUX_out(ADDR2MUX_out)
+                );
+
+assign ADDRMUX_out = ADDR1MUX_out + ADDR2MUX_out;
+
+
+endmodule  
+

@@ -1,0 +1,186 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/janso/Desktop/ECE385/lab4/lab4_3_adders/simulation/modelsim
+vadder2
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1600356383
+!i10b 1
+!s100 0GP3oTa7ofzKPjL<Q7jfF0
+IZF8B060kh_[=0JihO4eln0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 adder2_sv_unit
+S1
+R0
+w1600355745
+8C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/adder2.sv
+FC:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/adder2.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1600356383.000000
+!s107 C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/adder2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file|C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/adder2.sv|
+!i113 1
+Z5 o-sv -work work
+Z6 !s92 -sv -work work +incdir+C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file
+Z7 tCvgOpt 0
+vcontrol
+R1
+R2
+!i10b 1
+!s100 4^T<MW:^Hhf;SGQ2_b=Kk3
+I3kLBM8WN`9PeaIK`8I=`73
+R3
+!s105 control_sv_unit
+S1
+R0
+w1420575184
+8C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/control.sv
+FC:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/control.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z8 !s108 1600356382.000000
+!s107 C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/control.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file|C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/control.sv|
+!i113 1
+R5
+R6
+R7
+vfull_adder
+R1
+Z9 !s110 1600356382
+!i10b 1
+!s100 ?oG9aCaj0<:>a^o>SI[9i2
+II[ebM[]?MKOj6^Y^hbJQ=2
+R3
+Z10 !s105 ripple_adder_sv_unit
+S1
+R0
+Z11 w1600324779
+Z12 8C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/ripple_adder.sv
+Z13 FC:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/ripple_adder.sv
+L0 52
+R4
+r1
+!s85 0
+31
+R8
+Z14 !s107 C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/ripple_adder.sv|
+Z15 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file|C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/ripple_adder.sv|
+!i113 1
+R5
+R6
+R7
+vHexDriver
+R1
+R9
+!i10b 1
+!s100 F7dDJLKONLDlAhT4ll@HA3
+IfWHROLlO;Z7d6:NTl`_6F3
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1420575104
+8C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/HexDriver.sv
+FC:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/HexDriver.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file|C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/HexDriver.sv|
+!i113 1
+R5
+R6
+R7
+n@hex@driver
+vreg_17
+R1
+R9
+!i10b 1
+!s100 TzXnY51aIaIZFVKcdA[Wn1
+IZAnhkbY0X^=9@2KHAZ<gH1
+R3
+!s105 reg_17_sv_unit
+S1
+R0
+w1420574106
+8C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/reg_17.sv
+FC:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/reg_17.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/reg_17.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file|C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/reg_17.sv|
+!i113 1
+R5
+R6
+R7
+vripple_adder
+R1
+R9
+!i10b 1
+!s100 0<E=mI[Ze3bZK@8WA]__f2
+IT]@FJ:EVK:Yd_[hR?^A4Z1
+R3
+R10
+S1
+R0
+R11
+R12
+R13
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+R14
+R15
+!i113 1
+R5
+R6
+R7
+vrouter
+R1
+R9
+!i10b 1
+!s100 0oS5^3aI5<4lR1GZZPnaj2
+IV76^CGG;9c99T=FIj:5cX2
+R3
+!s105 router_sv_unit
+S1
+R0
+w1420575152
+8C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/router.sv
+FC:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/router.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/router.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file|C:/Users/janso/Desktop/ECE385/lab4/lab4_adders_sv_file/router.sv|
+!i113 1
+R5
+R6
+R7

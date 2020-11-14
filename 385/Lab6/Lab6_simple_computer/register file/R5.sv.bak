@@ -1,0 +1,20 @@
+module R5 (
+					input logic LD_R5, Reset,
+					input logic [15:0] Data_in,
+					output logic [15:0] R5_val);
+					
+					always_comb
+					begin
+						if (Reset) begin
+							R5_val = 4'h0000;
+						end
+						
+						else if (LD_R5) begin
+							R5_val = Data_in;
+						end
+						
+						else begin
+							R5_val = R5_val;
+						end
+					end
+endmodule

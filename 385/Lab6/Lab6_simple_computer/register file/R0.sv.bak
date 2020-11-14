@@ -1,0 +1,20 @@
+module R0 (
+					input logic LD_R0, Reset,
+					input logic [15:0] Data_in,
+					output logic [15:0] R0_val);
+					
+					always_comb
+					begin
+						if (Reset) begin
+							R0_val = 4'h0000;
+						end
+						
+						else if (LD_R0) begin
+							R0_val = Data_in;
+						end
+						
+						else begin
+							R0_val = R0_val;
+						end
+					end
+endmodule

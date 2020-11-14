@@ -1,0 +1,47 @@
+Quartus Prime Archive log --	C:/ece385/Lab6_simple_computer/Lab6_tmp_archive.qarlog
+
+Archive:	C:/ece385/Lab6_simple_computer/Lab6_tmp_archive.qar
+Date:		Thu Feb 28 15:19:39 2019
+Quartus Prime		18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/ece385/Lab6_simple_computer/ADDRMUX.sv
+C:/ece385/Lab6_simple_computer/ALU.sv
+C:/ece385/Lab6_simple_computer/BEN.sv
+C:/ece385/Lab6_simple_computer/Clk.sdc
+C:/ece385/Lab6_simple_computer/Condition_Code.sv
+C:/ece385/Lab6_simple_computer/DRMUX.sv
+C:/ece385/Lab6_simple_computer/HexDriver.sv
+C:/ece385/Lab6_simple_computer/IR.sv
+C:/ece385/Lab6_simple_computer/ISDU.sv
+C:/ece385/Lab6_simple_computer/Lab6.qpf
+C:/ece385/Lab6_simple_computer/Lab6.qsf
+C:/ece385/Lab6_simple_computer/MAR.sv
+C:/ece385/Lab6_simple_computer/MDR.sv
+C:/ece385/Lab6_simple_computer/Mem2IO.sv
+C:/ece385/Lab6_simple_computer/PC.sv
+C:/ece385/Lab6_simple_computer/SLC3_2.sv
+C:/ece385/Lab6_simple_computer/SR1MUX.sv
+C:/ece385/Lab6_simple_computer/SR2MUX.sv
+C:/ece385/Lab6_simple_computer/datapath.sv
+C:/ece385/Lab6_simple_computer/lab6_toplevel.sv
+C:/ece385/Lab6_simple_computer/logic_set.sv
+C:/ece385/Lab6_simple_computer/memory_contents.sv
+C:/ece385/Lab6_simple_computer/register_8.sv
+C:/ece385/Lab6_simple_computer/register_file.sv
+C:/ece385/Lab6_simple_computer/slc3.sv
+C:/ece385/Lab6_simple_computer/test_memory.sv
+C:/ece385/Lab6_simple_computer/testbench.sv
+C:/ece385/Lab6_simple_computer/tristate.sv
+C:/ece385/Lab6_simple_computer/tristate_MUX.sv
+c:/intelfpga_lite/18.0/quartus/bin64/assignment_defaults.qdf
+	======= Total: 30 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Thu Feb 28 15:19:44 2019
+Source archive file:	C:/ece385/Lab6_simple_computer/Lab6_tmp_archive.qar
+Archive was extracted into	D:/ECE385 Code/
+		 - successfully.

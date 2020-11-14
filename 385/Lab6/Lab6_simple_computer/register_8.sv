@@ -1,0 +1,168 @@
+module R0 (
+					input logic LD_R0, Reset, Clk,
+					input logic [15:0] Data_in,
+					output logic [15:0] R0_val);
+					
+					always_ff @ (posedge Clk)
+					begin
+						if (Reset) begin
+							R0_val = 4'h0000;
+						end
+						
+						else if (LD_R0) begin
+							R0_val = Data_in;
+						end
+						
+						else begin
+							R0_val = R0_val;
+						end
+					end
+endmodule
+
+module R1 (
+					input logic LD_R1, Reset, Clk, 
+					input logic [15:0] Data_in, 
+					output logic [15:0] R1_val);
+					
+					always_ff @ (posedge Clk)
+					begin
+						if (Reset) begin
+							R1_val = 4'h0000;
+						end
+						
+						else if (LD_R1) begin
+							R1_val = Data_in;
+						end
+						
+						else begin
+							R1_val = R1_val;
+						end
+					end
+endmodule
+
+module R2 (
+					input logic LD_R2, Reset, Clk, 
+					input logic [15:0] Data_in, 
+					output logic [15:0] R2_val);
+					
+					always_ff @ (posedge Clk)
+					begin
+						if (Reset) begin
+							R2_val = 4'h0000;
+						end
+						
+						else if (LD_R2) begin
+							R2_val = Data_in;
+						end
+						
+						else begin
+							R2_val = R2_val;
+						end
+					end
+endmodule
+
+module R3 (
+					input logic LD_R3, Reset, Clk, 
+					input logic [15:0] Data_in, 
+					output logic [15:0] R3_val);
+					
+					always_ff @ (posedge Clk)
+					begin
+						if (Reset) begin
+							R3_val = 4'h0000;
+						end
+						
+						else if (LD_R3) begin
+							R3_val = Data_in;
+						end
+						
+						else begin
+							R3_val = R3_val;
+						end
+					end
+endmodule
+
+module R4 (
+					input logic LD_R4, Reset, Clk, 
+					input logic [15:0] Data_in, 
+					output logic [15:0] R4_val);
+					
+					always_ff @ (posedge Clk)
+					begin
+						if (Reset) begin
+							R4_val = 4'h0000;
+						end
+						
+						else if (LD_R4) begin
+							R4_val = Data_in;
+						end
+						
+						else begin
+							R4_val = R4_val;
+						end
+					end
+endmodule
+
+module R5 (
+					input logic LD_R5, Reset, Clk, 
+					input logic [15:0] Data_in, 
+					output logic [15:0] R5_val);
+					
+					always_ff @ (posedge Clk)
+					begin
+						if (Reset) begin
+							R5_val = 4'h0000;
+						end
+						
+						else if (LD_R5) begin
+							R5_val = Data_in;
+						end
+						
+						else begin
+							R5_val = R5_val;
+						end
+					end
+endmodule
+
+module R6 (
+					input logic LD_R6, Reset, Clk, 
+					input logic [15:0] Data_in, 
+					output logic [15:0] R6_val);
+					
+					always_ff @ (posedge Clk)
+					begin
+						if (Reset) begin
+							R6_val = 4'h0000;
+						end
+						
+						else if (LD_R6) begin
+							R6_val = Data_in;
+						end
+						
+						else begin
+							R6_val = R6_val;
+						end
+					end
+endmodule
+
+module R7 (
+					input logic LD_R7, Reset, Clk, 
+					input logic [15:0] Data_in,
+					output logic [15:0] R7_val);
+					
+					always_ff @ (posedge Clk)
+					begin
+						if (Reset) begin
+							R7_val = 4'h0000;
+						end
+						
+						else if (LD_R7) begin
+							R7_val = Data_in;
+						end
+						
+						else begin
+							R7_val = R7_val;
+						end
+					end
+endmodule
+
