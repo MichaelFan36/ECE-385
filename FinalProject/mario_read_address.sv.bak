@@ -1,0 +1,17 @@
+module Read_Address(input 	is_mario,
+					input 	[9:0]  DrawX, DrawY,
+					input 	[9:0]  X_Pos, Y_Pos,
+					output  [18:0] read_address,
+                    inout   [4:0] marioX_counter, marioY_counter);
+
+    // int DistX, DistY;
+	// assign DistX = DrawX - X_pos;
+	// assign DistY = DrawY - Y_pos;
+    always_comb 
+    begin
+		read_address = 18'b0;
+		if (is_mario) begin
+            read_address = (DrawX - X_Pos + 4) + (DrawY - Y_Pos) * 47;
+        end
+    end
+endmodule

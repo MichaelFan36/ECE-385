@@ -1,0 +1,166 @@
+module  Kuba ( 
+                input Reset, 
+                input Clk,
+                input frame_clk,
+				input [7:0] keycode,
+                input [9:0] DrawX, DrawY,
+                input [8:0] BG_step,
+                input [9:0] MarioX, MarioY, MarioS_X,MarioS_Y,
+
+
+                output [7:0]  Red, Green, Blue,
+                output is_kuba
+               );
+    
+    logic [9:0] kuba_X_Pos, kuba_X_Motion, kuba_Y_Pos, kuba_Y_Motion, kuba_X_Size, kuba_Y_Size, kuba_step;
+    logic [18:0] read_address;
+    logic [2:0] data_sprite;
+    int enlarge_DrawX, enlarge_DrawY;
+	 
+    parameter [9:0] kuba_X_Home=400;  // Center position on the X axis
+    parameter [9:0] kuba_Y_Home=200;  // Center position on the Y axis
+    parameter [9:0] kuba_X_Min=0;       // Leftmost point on the X axis
+    parameter [9:0] kuba_X_Max=4439;     // 554 Rightmost point on the X axis
+    parameter [9:0] kuba_Y_Min=0;       // Topmost point on the Y axis
+    parameter [9:0] kuba_Y_Max=447;     // 55 Bottommost point on the Y axis
+    parameter [9:0] kuba_X_Step=1;      // Step size on the X axis
+    parameter [9:0] kuba_Y_Step=1;      // Step size on the Y axis
+
+    assign kuba_X_Size = 130;  // 73 assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign kuba_Y_Size = 130;  // 55 assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign kuba_X_Pos = 0;
+    assign kuba_Y_Pos = 0;
+    assign enlarge_DrawX = DrawX/2;
+    assign enlarge_DrawY = DrawY/2;
+
+
+    always_comb begin
+		if (((DrawX >= kuba_X_Pos) && (DrawY >= kuba_Y_Pos)) && ((DrawX < kuba_X_Size) && (DrawY < kuba_Y_Size)))
+			is_kuba = 1'b1;
+		else
+			is_kuba = 1'b0;
+	end
+
+    always_comb 
+    begin
+		read_address = 18'b0;
+		if (is_kuba) begin
+            read_address = (enlarge_DrawX - kuba_X_Pos + 123) + (enlarge_DrawY - kuba_Y_Pos) * 555;
+        end
+    end
+
+    
+
+    kuba_frameRAM _kuba_frameRAM(.read_address(read_address), .data_Out(data_sprite), .Clk(Clk));
+
+   
+    always_ff @ (posedge Reset or posedge frame_clk )
+    begin: Move_Mario
+        if (Reset)  // Asynchronous Reset
+        begin 
+            kuba_step <= 10'd0; //Mario_Y_Step;
+        end
+           
+        else 
+        begin 
+
+            if ( (kuba_step + kuba_X_Size) >= kuba_X_Max )  
+				    kuba_X_Motion <= 0;
+					  
+				else if ( (kuba_step) <= kuba_X_Min )  
+					kuba_X_Motion <= 0;
+				 
+				kuba_step <= (kuba_step + kuba_X_Motion);
+
+
+				 case (keycode)
+					8'h04 : begin
+								 kuba_X_Motion <= -1;//A
+								 kuba_Y_Motion<= 0;
+							end
+					        
+					8'h07 : begin	
+					          kuba_X_Motion <= 1;//D
+							    kuba_Y_Motion <= 0;
+							end
+ 
+					default: begin
+					          kuba_Y_Motion <= 0; 
+							  kuba_X_Motion <= 0;
+							 end	
+			   endcase
+
+             
+			
+			
+	  /**************************************************************************************
+	    ATTENTION! Please answer the following quesiton in your lab report! Points will be allocated for the answers!
+		 Hidden Question #2/2:
+          Note that Mario_Y_Motion in the above statement may have been changed at the same clock edge
+          that is causing the assignment of Mario_Y_pos.  Will the new value of Mario_Y_Motion be used,
+          or the old?  How will this impact behavior of the Mario during a bounce, and how might that 
+          interact with a response to a keypress?  Can you fix it?  Give an answer in your Post-Lab.
+      **************************************************************************************/
+      
+			
+		end  
+    end
+
+
+    always_comb
+    begin
+    Red = 8'hff;
+    Green = 8'h00;
+    Blue = 8'h00;
+    if (is_kuba) begin
+        if (data_sprite == 4'd1) begin
+            Red = 8'hff;
+            Green = 8'hfd;
+            Blue = 8'hfb;
+        end
+        if (data_sprite == 4'd2) begin
+            Red = 8'hb5;
+            Green = 8'h31;
+            Blue = 8'h21; 
+        end
+        if (data_sprite == 4'd3) begin
+            Red = 8'hf8;
+            Green = 8'h38;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd4) begin
+            Red = 8'he1;
+            Green = 8'h83;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd5) begin
+            Red = 8'h1d;
+            Green = 8'h7b;
+            Blue = 8'h01;
+        end
+        if (data_sprite == 4'd6) begin
+            Red = 8'hac;
+            Green = 8'h7c;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd7) begin
+            Red = 8'hd4;
+            Green = 8'he7;
+            Blue = 8'hc7;
+        end
+        if (data_sprite == 4'd8) begin
+            Red = 8'h05;
+            Green = 8'h79;
+            Blue = 8'h87;
+        end
+        if (data_sprite == 4'd9) begin
+            Red = 8'h00;
+            Green = 8'h00;
+            Blue = 8'h00;
+        end
+    end
+end
+       
+    
+
+endmodule

@@ -1,0 +1,98 @@
+module mario_palette (
+               inout [9:0] MarioX_pixel, MarioY_pixel,
+               input logic [4:0]mario_num,
+               input logic Clk,
+               output logic [7:0] R, G, B
+               );
+					
+logic [23:0] out;
+logic [19:0] start_address;
+logic [19:0] read_address;
+assign R = out[23:16];
+assign G = out[15:8];
+assign B = out[7:0];
+
+logic [4:0] index;
+
+always_ff @ (posedge Clk)
+    begin
+        case (mario_num)
+             5'd1:  start_address <= 19'd0;
+             5'd2:  start_address <= 19'd19;
+             5'd3:  start_address <= 19'd38;
+             5'd4:  start_address <= 19'd57;
+             5'd5:  start_address <= 19'd78;
+             5'd6:  start_address <= 19'd100;
+             5'd7:  start_address <= 19'd3779;
+             5'd8:  start_address <= 19'd3798;
+             5'd9:  start_address <= 19'd3817;
+             5'd10:  start_address <= 19'd3838;
+             5'd11:  start_address <= 19'd3860;
+             5'd12:  start_address <= 19'd7520;
+             5'd13:  start_address <= 19'd7540;
+             5'd14:  start_address <= 19'd7561;
+             5'd15:  start_address <= 19'd7581;
+             5'd16:  start_address <= 19'd7602;
+             5'd17:  start_address <= 19'd7623;
+             5'd18:  start_address <= 19'd14288;
+             5'd19:  start_address <= 19'd14308;
+
+        endcase
+
+        
+        MarioX_pixel = MarioX_pixel + 1;
+
+        if (mario_num <= 11 && MarioX_pixel >= 17)
+        begin
+            MarioX_pixel = 0;
+            MarioY_pixel = MarioY_pixel + 1;
+        end
+        if (mario_num <= 11 && MarioY_pixel >= 16)
+        begin
+            MarioX_pixel = 0;
+            MarioY_pixel = 0;
+        end
+            
+        
+
+        if (mario_num > 11 && MarioX_pixel >= 16)
+        begin
+            MarioX_pixel = 0;
+            MarioY_pixel = MarioY_pixel + 1;
+        end
+        if (mario_num > 11 && MarioY_pixel >= 32)
+        begin
+            MarioX_pixel = 0;
+            MarioY_pixel = 0;
+        end
+
+        assign read_address = start_address + MarioX_pixel + MarioY_pixel*188;
+
+    end
+
+    frameRAM get_mario
+        (
+		.read_address(read_address),
+		.Clk(Clk),
+		.data_Out(index)
+        );
+
+        ['0x800080','0xFFFDFB','0xB53121','0xF83800','0xE18300','0x1D7B01','0xAC7C00','0xD4E7C7']
+
+    always_comb
+    begin
+        case (index)
+             5'd0:  out <= 24'h800080;
+             5'd1:  out <= 24'hFFFDFB;
+             5'd2:  out <= 24'hB53121;
+             5'd3:  out <= 24'hF83800;
+             5'd4:  out <= 24'hE18300;
+             5'd5:  out <= 24'h1D7B01;
+             5'd6:  out <= 24'hAC7C00;
+             5'd7:  out <= 24'hD4E7C7;
+
+        endcase
+    end
+
+
+endmodule

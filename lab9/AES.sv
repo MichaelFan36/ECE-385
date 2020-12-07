@@ -73,7 +73,7 @@ module decript_states(
 					output logic AES_DONE
 				);
 
-enum logic [7:0]{
+enum logic [7:0] {
 	    
 		start,real_start,finish,
 
@@ -107,7 +107,7 @@ enum logic [7:0]{
 				next_state = real_start;
 			else 
 				next_state = start;
-		end 
+			end 
 
 		real_start:
 			next_state = ARK0;

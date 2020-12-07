@@ -1,0 +1,94 @@
+
+State Machine - |lab8|Fire:_fire|State
+Name State.ready State.move2 State.move1 State.stand 
+State.stand 0 0 0 0 
+State.move1 0 0 1 1 
+State.move2 0 1 0 1 
+State.ready 1 0 0 1 
+
+State Machine - |lab8|Kuba:_kuba|State
+Name State.ready State.move2 State.move1 State.up8 State.up7 State.up6 State.up5 State.up4 State.up3 State.up2 State.up1 State.stand 
+State.stand 0 0 0 0 0 0 0 0 0 0 0 0 
+State.up1 0 0 0 0 0 0 0 0 0 0 1 1 
+State.up2 0 0 0 0 0 0 0 0 0 1 0 1 
+State.up3 0 0 0 0 0 0 0 0 1 0 0 1 
+State.up4 0 0 0 0 0 0 0 1 0 0 0 1 
+State.up5 0 0 0 0 0 0 1 0 0 0 0 1 
+State.up6 0 0 0 0 0 1 0 0 0 0 0 1 
+State.up7 0 0 0 0 1 0 0 0 0 0 0 1 
+State.up8 0 0 0 1 0 0 0 0 0 0 0 1 
+State.move1 0 0 1 0 0 0 0 0 0 0 0 1 
+State.move2 0 1 0 0 0 0 0 0 0 0 0 1 
+State.ready 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lab8|mario:_mario|State_walk
+Name State_walk.ready_walk State_walk.walk6 State_walk.walk5 State_walk.walk4 State_walk.walk3 State_walk.walk2 State_walk.walk1 State_walk.stand_walk 
+State_walk.stand_walk 0 0 0 0 0 0 0 0 
+State_walk.walk1 0 0 0 0 0 0 1 1 
+State_walk.walk2 0 0 0 0 0 1 0 1 
+State_walk.walk3 0 0 0 0 1 0 0 1 
+State_walk.walk4 0 0 0 1 0 0 0 1 
+State_walk.walk5 0 0 1 0 0 0 0 1 
+State_walk.walk6 0 1 0 0 0 0 0 1 
+State_walk.ready_walk 1 0 0 0 0 0 0 1 
+
+State Machine - |lab8|mario:_mario|State
+Name State.fall State.fall_ready State.ready State.down4 State.down3 State.down2 State.down1 State.down0 State.up5 State.up4 State.up3 State.up2 State.up1 State.stand 
+State.stand 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+State.up1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+State.up2 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+State.up3 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+State.up4 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+State.up5 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+State.down0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+State.down1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+State.down2 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+State.down3 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+State.down4 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+State.ready 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+State.fall_ready 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+State.fall 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lab8|lab8_soc:u0|lab8_soc_sdram:sdram|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |lab8|lab8_soc:u0|lab8_soc_sdram:sdram|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lab8|lab8_soc:u0|lab8_soc_sdram:sdram|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |lab8|lab8_soc:u0|lab8_soc_sdram:sdram|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |lab8|lab8_soc:u0|lab8_soc_nios2_gen2_0:nios2_gen2_0|lab8_soc_nios2_gen2_0_cpu:cpu|lab8_soc_nios2_gen2_0_cpu_nios2_oci:the_lab8_soc_nios2_gen2_0_cpu_nios2_oci|lab8_soc_nios2_gen2_0_cpu_debug_slave_wrapper:the_lab8_soc_nios2_gen2_0_cpu_debug_slave_wrapper|lab8_soc_nios2_gen2_0_cpu_debug_slave_tck:the_lab8_soc_nios2_gen2_0_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

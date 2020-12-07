@@ -1,0 +1,146 @@
+module  Background ( 
+                input Reset, 
+                input Clk,
+                input frame_clk,
+				input [7:0] keycode,
+                input 	[9:0]  DrawX, DrawY,
+                input [8:0] BG_step,
+                input is_mario,
+                output [7:0]  Red, Green, Blue 
+               );
+    
+    logic [9:0] BG_X_Pos, BG_X_Motion, BG_Y_Pos, BG_Y_Motion, BG_X_Size, BG_Y_Size;
+    logic is_BG;
+    logic [18:0] read_address,
+    logic [2:0] data_sprite;
+	 
+    parameter [9:0] BG_X_Home=0;  // Center position on the X axis
+    parameter [9:0] BG_Y_Home=0;  // Center position on the Y axis
+    parameter [9:0] BG_X_Min=0;       // Leftmost point on the X axis
+    parameter [9:0] BG_X_Max=554;     // Rightmost point on the X axis
+    parameter [9:0] BG_Y_Min=0;       // Topmost point on the Y axis
+    parameter [9:0] BG_Y_Max=55;     // Bottommost point on the Y axis
+    parameter [9:0] BG_X_Step=1;      // Step size on the X axis
+    parameter [9:0] BG_Y_Step=1;      // Step size on the Y axis
+
+    assign BG_X_Size = 73;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign BG_Y_Size = 55;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign BG_X_Pos = 0;
+    assign BG_Y_Pos = 0;
+
+
+    always_comb begin
+		if (((DrawX >= BG_X_Pos) && (DrawY >= BG_Y_Pos)) && ((DistX < BG_X_Size) && (DistY < BG_Y_Size)))
+			is_BG = 1'b1;
+		else
+			is_BG = 1'b0;
+	end
+
+    always_comb 
+    begin
+		read_address = 18'b0;
+		if (is_BG && !is_mario) begin
+            read_address = (DrawX - BG_X_Pos + 0) + (DrawY - BG_Y_Pos) * 555 + BG_step;
+        end
+    end
+
+    
+
+    bg_frameRAM _bg_frameRAM(.read_address(read_address), .data_Out(data_sprite), .Clk(Clk));
+
+   
+    always_ff @ (posedge Reset or posedge frame_clk )
+    begin: Move_Mario
+        if (Reset)  // Asynchronous Reset
+        begin 
+            BG_step <= 10'd0; //Mario_Y_Step;
+        end
+           
+        else 
+        begin 
+
+				 case (keycode)
+					8'h04 : begin
+								BG_X_Motion <= 1;//A
+								BG_Y_Motion<= 0;
+							end
+					        
+					8'h07 : begin	
+					            BG_X_Motion <= -1;//D
+							    BG_Y_Motion <= 0;
+							end
+ 
+					default: begin
+					            BG_Y_Motion <= 0; 
+							    BG_X_Motion <= 0;
+							 end	
+			   endcase
+
+                if ( (BG_step + BG_X_Size + BG_X_Motion) >= BG_X_Max )  
+				    BG_X_Motion <= 0;
+					  
+				else if ( (BG_step + BG_X_Motion) <= BG_X_Min )  
+					BG_X_Motion <= 0;
+				 
+				BG_step <= (BG_step + BG_X_Motion);
+			
+			
+	  /**************************************************************************************
+	    ATTENTION! Please answer the following quesiton in your lab report! Points will be allocated for the answers!
+		 Hidden Question #2/2:
+          Note that Mario_Y_Motion in the above statement may have been changed at the same clock edge
+          that is causing the assignment of Mario_Y_pos.  Will the new value of Mario_Y_Motion be used,
+          or the old?  How will this impact behavior of the Mario during a bounce, and how might that 
+          interact with a response to a keypress?  Can you fix it?  Give an answer in your Post-Lab.
+      **************************************************************************************/
+      
+			
+		end  
+    end
+
+
+    always_comb
+begin
+    Red = 8'h00;
+    Green = 8'h00;
+    Blue = 8'h7f - DrawX[9:3];
+
+// '0x800080','0xFEFEFE','0xE75A10','0x007B00','0x008C8C','0x6B8CFF','0x000000'
+
+    if (is_BG && !is_mario) begin
+        if (data_sprite == 4'd1) begin
+            Red = 8'hfe;
+            Green = 8'hfe;
+            Blue = 8'hfe;
+        end
+        if (data_sprite == 4'd2) begin
+            Red = 8'he7;
+            Green = 8'h5a;
+            Blue = 8'h10; 
+        end
+        if (data_sprite == 4'd3) begin
+            Red = 8'h00;
+            Green = 8'h7b;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd4) begin
+            Red = 8'h00;
+            Green = 8'h8c;
+            Blue = 8'h8c;
+        end
+        if (data_sprite == 4'd5) begin
+            Red = 8'h6b;
+            Green = 8'h8c;
+            Blue = 8'hff;
+        end
+        if (data_sprite == 4'd6) begin
+            Red = 8'h00;
+            Green = 8'h00;
+            Blue = 8'h00;
+        end
+    end
+end
+       
+    
+
+endmodule

@@ -1,0 +1,94 @@
+
+module  mario ( 
+                input Reset, 
+                input frame_clk,
+				input [7:0] keycode,
+                output [9:0]  MarioX, MarioY, MarioS 
+               );
+    
+    logic [9:0] Mario_X_Pos, Mario_X_Motion, Mario_Y_Pos, Mario_Y_Motion, Mario_Size;
+	 
+    parameter [9:0] Mario_X_Home=128;  // Center position on the X axis
+    parameter [9:0] Mario_Y_Home=112;  // Center position on the Y axis
+    parameter [9:0] Mario_X_Min=0;       // Leftmost point on the X axis
+    parameter [9:0] Mario_X_Max=0;     // Rightmost point on the X axis
+    parameter [9:0] Mario_Y_Min=0;       // Topmost point on the Y axis
+    parameter [9:0] Mario_Y_Max=224;     // Bottommost point on the Y axis
+    parameter [9:0] Mario_X_Step=1;      // Step size on the X axis
+    parameter [9:0] Mario_Y_Step=1;      // Step size on the Y axis
+
+    assign Mario_Size = 4;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign Mario_X_Size = 4;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign Mario_Y_Size = 8;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+   
+    always_ff @ (posedge Reset or posedge frame_clk )
+    begin: Move_Mario
+        if (Reset)  // Asynchronous Reset
+        begin 
+            Mario_Y_Motion <= 10'd0; //Mario_Y_Step;
+            Mario_X_Motion <= 10'd0; //Mario_X_Step;
+            Mario_Y_Pos <= Mario_X_Home;
+            Mario_X_Pos <= Mario_Y_Home;
+        end
+           
+        else 
+        begin 
+
+					  
+				 case (keycode)
+					8'h04 : begin
+								Mario_X_Motion <= -1;//A
+								Mario_Y_Motion<= 0;
+							end
+					        
+					8'h07 : begin	
+					            Mario_X_Motion <= 1;//D
+							    Mario_Y_Motion <= 0;
+							end
+
+					8'h16 : begin
+					            Mario_Y_Motion <= 1;//S
+							    Mario_X_Motion <= 0;
+							 end
+							  
+					8'h1A : begin
+					            Mario_Y_Motion <= -1;//W
+							    Mario_X_Motion <= 0;
+							 end	  
+					default: begin
+					            Mario_Y_Motion <= 0; 
+							    Mario_X_Motion <= 0;
+							 end	
+			   endcase
+
+                if ( (Mario_Y_Pos + Mario_Y_Size) >= Mario_Y_Max )  
+				    Mario_Y_Motion <= 0;
+					  
+				else if ( (Mario_Y_Pos - Mario_Y_Size) <= Mario_Y_Min )  
+					Mario_Y_Motion <= 0;
+				 
+				 Mario_Y_Pos <= (Mario_Y_Pos + Mario_Y_Motion);  // Update Mario position
+				 Mario_X_Pos <= (Mario_X_Pos + Mario_X_Motion);
+			
+			
+	  /**************************************************************************************
+	    ATTENTION! Please answer the following quesiton in your lab report! Points will be allocated for the answers!
+		 Hidden Question #2/2:
+          Note that Mario_Y_Motion in the above statement may have been changed at the same clock edge
+          that is causing the assignment of Mario_Y_pos.  Will the new value of Mario_Y_Motion be used,
+          or the old?  How will this impact behavior of the Mario during a bounce, and how might that 
+          interact with a response to a keypress?  Can you fix it?  Give an answer in your Post-Lab.
+      **************************************************************************************/
+      
+			
+		end  
+    end
+       
+    assign MarioX = Mario_X_Pos;
+   
+    assign MarioY = Mario_Y_Pos;
+   
+    assign MarioS = Mario_Size;
+    
+
+endmodule

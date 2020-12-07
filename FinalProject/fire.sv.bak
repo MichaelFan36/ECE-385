@@ -1,0 +1,183 @@
+module  Fire ( 
+                input Reset, 
+                input Clk,
+                input frame_clk,
+				input [7:0] keycode,
+                input [9:0] DrawX, DrawY,
+                input [8:0] BG_step,
+                input [9:0] MarioX, MarioY, MarioS_X, MarioS_Y,
+
+
+                output [7:0]  Red, Green, Blue,
+                output [9:0]  FireX, FireY, FireS_X, FireS_Y,
+                output is_Fire
+               );
+    
+    logic [9:0] Fire_X_Pos, Fire_X_Motion, Fire_Y_Pos, Fire_Y_Motion, Fire_Size,Fire_X_Size,Fire_Y_Size;
+	logic [9:0] Fire_Y_Pos_in, Fire_X_Pos_in, Fire_Y_Motion_in;
+    logic is_jump;
+    logic [18:0] FireReadAdd;
+
+    parameter [9:0] Fire_X_Home=400;  // Center position on the X axis
+    parameter [9:0] Fire_Y_Home=300;  // Center position on the Y axis
+    parameter [9:0] Fire_X_Min=0;       // Leftmost point on the X axis
+    parameter [9:0] Fire_X_Max=0;     // Rightmost point on the X axis
+    parameter [9:0] Fire_Y_Min=10;       // Topmost point on the Y axis
+    parameter [9:0] Fire_Y_Max=400;     // Bottommost point on the Y axis
+    parameter [9:0] Fire_X_Step=4;      // Step size on the X axis
+    parameter [9:0] Fire_Y_Step=4;      // Step size on the Y axis
+
+    assign Fire_X_Size = 48;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign Fire_Y_Size = 16;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+	 
+    enum logic [2:0] {stand, up1, ready} State, Next_state;
+
+   logic frame_clk_delayed, frame_clk_rising_edge;
+    always_ff @ (posedge Clk) begin
+        frame_clk_delayed <= frame_clk;
+        frame_clk_rising_edge <= (frame_clk == 1'b1) && (frame_clk_delayed == 1'b0);
+    end
+
+
+   always_comb
+	begin 
+		Next_state = State;
+		
+		unique case (State)
+            stand: 
+				if (BG_step > 280) 
+					Next_state = ready;
+                else
+                    Next_state = stand;
+			ready: 
+				Next_state = up1;                      
+			up1 : 
+				Next_state = stand;
+
+			default : 
+				Next_state = stand;
+
+		endcase
+	end
+
+
+    always_ff @ (posedge Reset or posedge frame_clk )
+    begin: Move_Fire
+        if (Reset)  // Asynchronous Reset
+        begin 
+            Fire_Y_Motion <= 10'b0; //Fire_Y_Step;
+            Fire_X_Motion <= 10'b0; //Fire_X_Step;
+            Fire_Y_Pos <= Fire_Y_Home;
+            Fire_X_Pos <= Fire_X_Home;
+            State <= stand;
+
+        end
+        else
+        begin  
+            Fire_Y_Pos <= Fire_Y_Pos_in;
+            Fire_Y_Motion <= Fire_Y_Motion_in;
+            State <= Next_state;
+        end
+
+    end
+
+    always_comb
+    begin
+
+            if (BG_step > 280 && State == ready )
+            begin
+                Fire_Y_Motion_in = (~(Fire_X_Step + 16) + 1'b1);//W
+            end	  
+            else if(State == up1 )
+            begin
+                Fire_Y_Motion_in = (Fire_X_Step + 16);//W
+            end	  
+            else
+                Fire_Y_Motion_in = 10'b0;
+
+        Fire_Y_Pos_in = (Fire_Y_Pos + Fire_Y_Motion);
+
+    end
+       
+
+    int DistX, DistY;
+	assign DistX = DrawX - Fire_X_Pos;
+	assign DistY = DrawY - Fire_Y_Pos;
+	always_comb begin
+		if (((DrawX >= Fire_X_Pos) && (DrawY >= Fire_Y_Pos)) && ((DistX < Fire_X_Size) && (DistY < Fire_Y_Size)) && (BG_step > 280))
+			is_Fire = 1'b1;
+		else
+			is_Fire = 1'b0;
+	end
+
+    int enlarge_DrawX, enlarge_DrawY;
+	assign enlarge_DrawX = (DrawX - Fire_X_Pos)/ 2;
+    assign enlarge_DrawY = (DrawY - Fire_Y_Pos)/2;
+    always_comb 
+    begin
+		FireReadAdd = 18'b0;
+		if (is_Fire) begin
+            FireReadAdd = (enlarge_DrawX + 112) + (enlarge_DrawY+99) * 188;
+        end
+    end
+       
+    logic [3:0] data_sprite;
+
+mario_frameRAM _Fire_frameRAM(.read_address(FireReadAdd), .data_Out(data_sprite), .*);
+
+always_comb
+begin
+    Red = 8'hff;
+    Green = 8'h00;
+    Blue = 8'h00;
+    if (is_Fire) begin
+        if (data_sprite == 4'd1) begin
+            Red = 8'hff;
+            Green = 8'hfd;
+            Blue = 8'hfb;
+        end
+        if (data_sprite == 4'd2) begin
+            Red = 8'hb5;
+            Green = 8'h31;
+            Blue = 8'h21; 
+        end
+        if (data_sprite == 4'd3) begin
+            Red = 8'hf8;
+            Green = 8'h38;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd4) begin
+            Red = 8'he1;
+            Green = 8'h83;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd5) begin
+            Red = 8'h1d;
+            Green = 8'h7b;
+            Blue = 8'h01;
+        end
+        if (data_sprite == 4'd6) begin
+            Red = 8'hac;
+            Green = 8'h7c;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd7) begin
+            Red = 8'hd4;
+            Green = 8'he7;
+            Blue = 8'hc7;
+        end
+        if (data_sprite == 4'd8) begin
+            Red = 8'h05;
+            Green = 8'h79;
+            Blue = 8'h87;
+        end
+        if (data_sprite == 4'd9) begin
+            Red = 8'h00;
+            Green = 8'h00;
+            Blue = 8'h00;
+        end
+    end
+end
+    
+
+endmodule

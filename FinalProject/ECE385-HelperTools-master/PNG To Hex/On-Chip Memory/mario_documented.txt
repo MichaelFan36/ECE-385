@@ -1,0 +1,76 @@
+Small mario(17 * 16):
+mario1: (0,0)
+mario2: (19,0)
+mario3: (38,0)
+mario4: (57,0)
+mario5: (78,0)
+mario6: (100,0)
+
+mario7: (19,20)
+mario8: (38,20)
+mario9: (57,20)
+mario10: (78,20)
+mario11: (100,20)
+
+
+
+Big mario(16 * 32):
+mario1: (0,40)
+mario2: (20,40)
+mario3: (41,40)
+mario4: (61,40)
+mario5: (82,40)
+mario6: (103,40)
+
+mario7: (0,76)
+mario8: (20,76)
+
+
+
+Axes(32 * 32):
+Axe_up: (40,76)
+Axe_down: (76,76)
+
+
+
+Mogu(16 * 16):
+mogu1: (112,76)
+mogu2: (132,76)
+mogu3: (152,76)
+
+
+Fire(24 * 8):
+Fire: (112, 99)
+
+
+
+Kuba(64 * 64):
+Kuba: (124, 0)
+
+
+
+Flower(16 * 23):
+Flower1: (0, 114)
+Flower2: (21, 114)
+
+
+Princess(13 * 23):
+Princess: (43, 114)
+
+
+BigCoin(10 * 14):
+BigCoin1: (61,114)
+BigCoin2: (76, 114)
+BigCoin3: (91, 114)
+BigCoin4: (106, 114)
+
+
+
+SmallCoin(8 * 14):
+SmallCoin1: (119, 114)
+SmallCoin2: (130, 114)
+SmallCoin3: (141, 114)
+SmallCoin4: (149, 114)
+
+Hongmugu(16 * 16):
+Hongmugu: (158, 114)

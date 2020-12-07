@@ -1,0 +1,61 @@
+Small mario(3 * 4):
+dead mario1: (0,0)
+right walk mario2: (4,0)
+right walk mario3: (8,0)
+right walk mario4: (12,0)
+right walk mario5: (16,0)
+right junp mario6: (20,0)
+
+left walk mario7: (0,5)
+left walk mario8: (4,5)
+left walk mario9: (8,5)
+left walk mario10: (12,5)
+left jump mario11: (16,5)
+
+
+
+Big mario(4 * 16):
+right walk mario1: (0,10)
+right walk mario2: (5,10)
+right walk mario3: (10,10)
+left walk mario4: (15,10)
+left walk mario5: (20,10)
+left walk mario6: (25,10)
+
+left jump mario7: (0,18)
+right junp mario8: (5,18)
+
+
+Axes(7 * 7):
+Axe_up: (10,18)
+Axe_down: (18,18)
+
+
+
+Mogu(4 * 4):
+left mogu1: (26,18)
+right mogu2: (31,18)
+dead mogu3: (36,18)
+
+
+Fire(6 * 2):
+Fire: (18, 26)
+
+
+
+Kuba(16 * 16):
+Kuba: (30, 0)
+
+
+
+Flower(4 * 5):
+Flower1: (0, 26)
+Flower2: (5, 26)
+
+
+Princess(3 * 4):
+Princess: (10, 26)
+
+
+Hongmugu(3 * 3):
+Hongmugu: (14, 26)
