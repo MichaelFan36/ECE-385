@@ -26,18 +26,19 @@ end
 endmodule
 
 module  Fire ( 
-                input Reset, 
-                input Clk,
-                input frame_clk,
-					 input [31:0] keycode,
-                input [9:0] DrawX, DrawY,
-                input [8:0] BG_step,
-                input [9:0] MarioX, MarioY, MarioS_X, MarioS_Y,
+                input logic Reset, 
+                input logic Clk,
+                input logic frame_clk,
+				input logic [31:0] keycode,
+                input logic [9:0] DrawX, DrawY,
+                input logic [8:0] BG_step,
+                input logic [9:0] MarioX, MarioY, MarioS_X, MarioS_Y,
+                inout logic [8:0] dead_times,
 
 
-                output [7:0]  Red, Green, Blue,
-                output [9:0]  FireX, FireY, FireS_X, FireS_Y,
-                inout is_fire
+                output logic [7:0]  Red, Green, Blue,
+                output logic [9:0]  FireX, FireY, FireS_X, FireS_Y,
+                inout logic is_fire, dead_reset
                );
     
     
@@ -47,12 +48,24 @@ module  Fire (
 
     parameter [9:0] fire_X_Home= 340;  // Center position on the X axis 400
     parameter [9:0] fire_Y_Home= 320;  // Center position on the Y axis 270
-    parameter [9:0] fire_X_Min=0;       // Leftmost point on the X axis
-    parameter [9:0] fire_X_Max=0;     // Rightmost point on the X axis
-    parameter [9:0] fire_Y_Min=10;       // Topmost point on the Y axis
-    parameter [9:0] fire_Y_Max=400;     // Bottommost point on the Y axis
-    parameter [9:0] fire_X_Step=4;      // Step size on the X axis
-    parameter [9:0] fire_Y_Step=4;      // Step size on the Y axis
+    parameter [9:0] fire_X_Min= 0;       // Leftmost point on the X axis
+    parameter [9:0] fire_X_Max= 0;     // Rightmost point on the X axis
+    parameter [9:0] fire_Y_Min= 10;       // Topmost point on the Y axis
+    parameter [9:0] fire_Y_Max= 400;     // Bottommost point on the Y axis
+    parameter [9:0] fire_X_Step= 4;      // Step size on the X axis
+    parameter [9:0] fire_Y_Step= 4;      // Step size on the Y axis
+    parameter [8:0] initial_dead_times = 0;
+
+
+    
+    parameter [9:0] jump_Step_forward=2;  // fire_step + 12 = 4 + 12
+    parameter [9:0] jump_Step_downward=20;
+    parameter [9:0] jump_Step_downward1=20; 
+    parameter [9:0] jump_Step_downward2=25; 
+    parameter [9:0] jump_Step_downward3=38; 
+    parameter [9:0] jump_Step_downward4=45; 
+    parameter [9:0] counter_background=8;
+    parameter [8:0] dead_offset = 10;
 
     assign fire_X_Size = 48;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
     assign fire_Y_Size = 16;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
@@ -60,6 +73,7 @@ module  Fire (
     enum logic [1:0] {stand, move1, move2, ready} State, Next_state;
     logic is_on;
 
+    logic [8:0] dead_times_in, dead_times_motion;
     assign up_on = (keycode[31:24] == 8'h1A | keycode[23:16] == 8'h1A | keycode[15: 8] == 8'h1A | keycode[ 7: 0] == 8'h1A);
     assign down_on = (keycode[31:24] == 8'h16 | keycode[23:16] == 8'h16 | keycode[15: 8] == 8'h16 | keycode[ 7: 0] == 8'h16);
     assign left_on = (keycode[31:24] == 8'h04 | keycode[23:16] == 8'h04 | keycode[15: 8] == 8'h04 | keycode[ 7: 0] == 8'h04);
@@ -109,43 +123,12 @@ module  Fire (
 		endcase
 	end
 
-
-   
-
-    always_ff @ (posedge Reset or posedge Clk_5Hz )
-    begin: Move_fire
-        if (Reset)  // Asynchronous Reset
-        begin 
-            fire_Y_Motion <= 10'b0; //fire_Y_Step;
-            fire_X_Motion <= 10'b0; //fire_X_Step;
-            fire_Y_Pos <= fire_Y_Home;
-            fire_X_Pos <= fire_X_Home;
-            State <= stand;
-
-        end
-        else
-        begin  
-            fire_X_Pos <= fire_X_Pos_in;
-            fire_Y_Pos <= fire_Y_Pos_in;
-            fire_Y_Motion <= fire_Y_Motion_in;
-            fire_X_Motion <= fire_X_Motion_in;
-            State <= Next_state;
-        end
-
-    end
-
-    parameter [9:0] jump_Step_forward=2;  // fire_step + 12 = 4 + 12
-    parameter [9:0] jump_Step_downward=20;
-    parameter [9:0] jump_Step_downward1=20; 
-    parameter [9:0] jump_Step_downward2=25; 
-    parameter [9:0] jump_Step_downward3=38; 
-    parameter [9:0] jump_Step_downward4=45; 
-    parameter [9:0] counter_background=8;
-
     always_comb
     begin
-        if (State == ready )
+            if (State == ready )
             begin
+                dead_times_in = dead_times;
+                dead_reset = 1'b0;
                 if ((MarioX + MarioS_X) <= (fire_X_Pos + ((~jump_Step_forward) + 1'b1) ))
 				fire_X_Motion_in = ((~jump_Step_forward) + 1'b1);
                 else
@@ -155,10 +138,12 @@ module  Fire (
 				fire_Y_Motion_in = jump_Step_forward;
                 else
                 fire_Y_Motion_in = 10'b0;
-            end	  
+            end	 
+
             else if(State == move1)
             begin
-
+                dead_times_in = dead_times;
+                dead_reset = 1'b0;
                 if ((MarioX + MarioS_X) <= (fire_X_Pos + ((~jump_Step_forward) + 1'b1) ))
                 begin 
 				fire_X_Motion_in = ((~jump_Step_forward) + 1'b1);
@@ -187,6 +172,11 @@ module  Fire (
                 begin
                 fire_X_Motion_in = (~(counter_background) + 1'b1);
                 end 
+                if ((MarioY) <= (fire_Y_Pos + jump_Step_forward))
+                    begin
+                    dead_times_in = dead_times + dead_offset;
+                    dead_reset = 1'b1;
+                    end
                 end
 
                 if ((MarioY) > (fire_Y_Pos + jump_Step_forward))
@@ -195,10 +185,13 @@ module  Fire (
                 fire_Y_Motion_in = ((~jump_Step_forward) + 1'b1);
                 else
                 fire_Y_Motion_in = 10'b0; 
+
             end	
 
             else if(State == move2)
             begin
+                dead_times_in = dead_times;
+                dead_reset = 1'b0;
                 if ((MarioX + MarioS_X) <= (fire_X_Pos + ((~jump_Step_forward) + 1'b1) ))
                 begin 
 
@@ -211,7 +204,6 @@ module  Fire (
                 begin
                 fire_X_Motion_in = (~(jump_Step_forward + counter_background) + 1'b1);
                 end 
-
                 end
                 
                 else
@@ -226,7 +218,11 @@ module  Fire (
                 begin
                 fire_X_Motion_in = (~(counter_background) + 1'b1);
                 end 
-
+                if ((MarioY) <= (fire_Y_Pos + jump_Step_forward))
+                    begin
+                    dead_times_in = dead_times + dead_offset;
+                    dead_reset = 1'b1;
+                    end
                 end
 
                 if ((MarioY) > (fire_Y_Pos + jump_Step_forward))
@@ -242,11 +238,44 @@ module  Fire (
             begin
 				fire_Y_Motion_in = 10'b0;
                 fire_X_Motion_in = 10'b0;
+                dead_times_in = dead_times;
+                dead_reset = 1'b0;
             end
         fire_X_Pos_in = (fire_X_Pos + fire_X_Motion);
         fire_Y_Pos_in = (fire_Y_Pos + fire_Y_Motion);
     end
        
+    always_ff @ (posedge Reset or posedge Clk_5Hz or posedge dead_reset)
+    begin: Move_fire
+        if (Reset)  // Asynchronous Reset
+        begin 
+            fire_Y_Motion <= 10'b0; //fire_Y_Step;
+            fire_X_Motion <= 10'b0; //fire_X_Step;
+            fire_Y_Pos <= fire_Y_Home;
+            fire_X_Pos <= fire_X_Home;
+            State <= stand;
+            dead_times <= initial_dead_times;
+        end
+        else if (dead_reset)
+		  begin
+            fire_Y_Motion <= 10'b0; //fire_Y_Step;
+            fire_X_Motion <= 10'b0; //fire_X_Step;
+            fire_Y_Pos <= fire_Y_Home;
+            fire_X_Pos <= fire_X_Home;
+            State <= stand;
+            dead_times <= dead_times_in;
+		  end
+        else
+        begin  
+            fire_X_Pos <= fire_X_Pos_in;
+            fire_Y_Pos <= fire_Y_Pos_in;
+            fire_Y_Motion <= fire_Y_Motion_in;
+            fire_X_Motion <= fire_X_Motion_in;
+            State <= Next_state;
+            dead_times <= dead_times_in;
+        end
+
+    end
 
     int DistX, DistY;
 	assign DistX = DrawX - fire_X_Pos;

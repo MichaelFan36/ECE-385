@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Dec 6, 2020 6:50:40 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1607302240834</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 10, 2020 12:15:58 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1607624158304</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\cozyn\OneDrive\Desktop\ECE385\FinalProject\software\Mario_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\lab8_soc.sopcinfo</SopcDesignFile>

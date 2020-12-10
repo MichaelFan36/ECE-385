@@ -1,0 +1,231 @@
+module slowClock_5HZ_begin ( Clk, Reset, Clk_5Hz);
+
+input Clk, Reset;
+output Clk_5Hz;
+
+reg Clk_5Hz = 1'b0;
+reg [28:0] counter;
+
+always@(posedge Reset or posedge Clk)
+begin
+if (Reset == 1'b1) 
+begin
+	Clk_5Hz <= 0;
+	counter <= 0;
+end
+else
+begin
+counter <= counter+1;
+if (counter == 3_000_000)
+begin
+counter <= 0;
+Clk_5Hz <= ~Clk_5Hz;
+end
+end
+end
+endmodule
+
+module  Beginning ( 
+                input Reset, 
+                input Clk,
+                input frame_clk,
+				input [31:0] keycode,
+                input [9:0]  DrawX, DrawY,
+
+                output [7:0]  Red, Green, Blue,
+                output game_on
+               );
+    
+    logic [9:0] Begin_X_Pos, Begin_X_Motion, Begin_Y_Pos, Begin_Y_Motion, Begin_X_Size, Begin_Y_Size;
+    logic [18:0] read_address;
+    logic [3:0] data_sprite;
+    int enlarge_DrawX, enlarge_DrawY;
+    logic [9:0] Begin_step_in, Begin_X_Motion_in;
+    logic game_on_in;
+	 
+    parameter [9:0] Begin_X_Home=0;  // Center position on the X axis
+    parameter [9:0] Begin_Y_Home=0;  // Center position on the Y axis
+    parameter [9:0] Begin_X_Min=0;       // Leftmost point on the X axis
+    parameter [9:0] Begin_X_Max=554;     // 554 Rightmost point on the X axis
+    parameter [9:0] Begin_Y_Min=0;       // Topmost point on the Y axis
+    parameter [9:0] Begin_Y_Max=55;     // 55 Bottommost point on the Y axis
+    parameter [9:0] Begin_X_Step=1;      // Step size on the X axis
+    parameter [9:0] Begin_Y_Step=1;      // Step size on the Y axis
+
+    assign Begin_X_Size = 60;  // 73 assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign Begin_Y_Size = 169;  // 55 assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign Begin_X_Pos = 0;
+    assign Begin_Y_Pos = 0;
+    assign enlarge_DrawX = DrawX;
+    assign enlarge_DrawY = DrawY;
+    assign game_on_in = (keycode[31:24] == 8'h28 | keycode[23:16] == 8'h28 | keycode[15: 8] == 8'h28 | keycode[ 7: 0] == 8'h28);
+
+    enum logic [3:0] {still, begin1, begin2, begin3, ready} State, Next_state;
+
+    int begin_y_offset;
+
+    logic Clk_5Hz;
+
+    slowClock_5HZ_begin Clock_5Hz_begin(.Clk(Clk), .Reset(Reset), .Clk_5Hz(Clk_5Hz));
+
+    always_comb begin
+		if (((DrawX >= Begin_X_Pos) && (DrawY >= Begin_Y_Pos)) && ((DrawX < Begin_X_Size) && (DrawY < Begin_Y_Size)))
+			is_Begin = 1'b1;
+		else
+			is_Begin = 1'b0;
+	end
+
+   always_comb
+	begin 
+		Next_state = State;
+		
+		unique case (State)
+            still: 
+                begin
+				Next_state = ready;
+                begin_y_offset = 0;
+                end
+            end
+			ready: 
+                begin
+                   Next_state = begin1; 
+                   begin_y_offset = 0;
+                end                      
+
+            begin1: 
+                begin
+                   Next_state = begin2; 
+                   begin_y_offset = 0;
+                end     
+
+            begin2: 
+                begin
+                   Next_state = begin3; 
+                   begin_y_offset = 69;
+                end    
+
+            begin3: 
+                begin
+                   Next_state = still; 
+                   begin_y_offset = 69;
+                end    
+            
+			default : 
+                begin
+					Next_state = still;
+                    begin_y_offset = 0;
+                end
+
+		endcase
+	end
+
+    always_ff @ (posedge Reset or posedge Clk_5Hz )
+    begin:
+        if (Reset)  // Asynchronous Reset
+        begin 
+            State <= still;
+            game_on <= 0;
+        end
+        else
+        begin
+            State <= Next_state;
+            game_on <= game_on_in;
+        end
+
+    end
+
+
+
+    always_comb 
+    begin
+		read_address = 18'b0;
+		if (is_Begin) begin
+            read_address = (enlarge_DrawX - Begin_X_Pos) + (enlarge_DrawY - Begin_Y_Pos + begin_y_offset) * 60;
+        end
+    end
+
+    
+
+    end_frameRAM _end_frameRAM(.read_address(read_address), .data_Out(data_sprite), .Clk(Clk));
+
+
+    always_comb
+    begin
+    Red = 8'hff;
+    Green = 8'h00;
+    Blue = 8'h00;
+
+// '0xE5E7E7','0xEEECEB','0xADADAD','0xC1C1C0','0x22110A','0x956156', '0x947A6E','0xB1978C', '0x715044', '0xC6B7AC', '0x795045', '0xA96E63', '0xFE83F4'
+
+    if (is_Begin && !game_on) begin
+        if (data_sprite == 4'd1) begin
+            Red = 8'he5;
+            Green = 8'he7;
+            Blue = 8'he7;
+        end
+        if (data_sprite == 4'd2) begin
+            Red = 8'hee;
+            Green = 8'hec;
+            Blue = 8'heb; 
+        end
+        if (data_sprite == 4'd3) begin
+            Red = 8'had;
+            Green = 8'had;
+            Blue = 8'had;
+        end
+        if (data_sprite == 4'd4) begin
+            Red = 8'hc1;
+            Green = 8'hc1;
+            Blue = 8'hc0;
+        end
+        if (data_sprite == 4'd5) begin
+            Red = 8'h22;
+            Green = 8'h11;
+            Blue = 8'h0a;
+        end
+        if (data_sprite == 4'd6) begin
+            Red = 8'h95;
+            Green = 8'h61;
+            Blue = 8'h56;
+        end
+        if (data_sprite == 4'd7) begin
+            Red = 8'h94;
+            Green = 8'h7a;
+            Blue = 8'h6e;
+        end
+        if (data_sprite == 4'd8) begin
+            Red = 8'hb1;
+            Green = 8'h97;
+            Blue = 8'h8c;
+        end
+        if (data_sprite == 4'd9) begin
+            Red = 8'h71;
+            Green = 8'h50;
+            Blue = 8'h44;
+        end
+        if (data_sprite == 4'd10) begin
+            Red = 8'hc6;
+            Green = 8'hb7;
+            Blue = 8'hac;
+        end
+        if (data_sprite == 4'd11) begin
+            Red = 8'h79;
+            Green = 8'h50;
+            Blue = 8'h45;
+        end
+        if (data_sprite == 4'd12) begin
+            Red = 8'ha9;
+            Green = 8'h6e;
+            Blue = 8'h63;
+        end
+        if (data_sprite == 4'd13) begin
+            Red = 8'hfe;
+            Green = 8'h83;
+            Blue = 8'hf4;
+        end
+    end
+end
+       
+    
+
+endmodule

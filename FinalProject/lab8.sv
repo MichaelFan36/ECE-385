@@ -166,23 +166,69 @@ wire  [9:0] marioX_counter, marioY_counter;
 logic [18:0] MarioReadAdd, KubaReadAdd;
 logic [7:0] mario_Red, mario_Blue, mario_Green;
 logic [7:0] BG_Red, BG_Blue, BG_Green;
+logic [7:0] mogu_Red, mogu_Blue, mogu_Green;
 logic [7:0] kuba_Red, kuba_Blue, kuba_Green;
 logic [7:0] fire_Red, fire_Blue, fire_Green;
-logic is_mario, is_BG,is_jump;
-wire is_kuba, is_fire;
+logic [7:0] ending_Red, ending_Blue, ending_Green;
+logic [7:0] Start_Red, Start_Blue, Start_Green;
+logic [7:0] live_Red1, live_Green1, live_Blue1, live_Red2, live_Green2, live_Blue2, live_Red3, live_Green3, live_Blue3;
+logic is_mario, is_BG,is_jump, is_mario_up;
+wire [8:0] dead_times;
+wire is_kuba, is_fire, game_on, is_life1, is_life2, is_life3, is_mogu, is_ending, dead_reset;
 wire [8:0] BG_step;
 int x_offset, y_offset, x_jump_offset, y_jump_offset;
 
 
+logic can_up, can_down, can_left, can_right;
+logic at_tube1, at_tube2, at_tube3, at_tube4, at_tube5, at_tube6, at_brick1, at_brick2, at_brick3;
+logic is_kuba_appeared, bg_cur_displacement, mogu_eaten;
 
 always_comb
 begin 
-
-	if(is_BG && !is_mario && !is_kuba && !is_fire)
+	if (game_on)
+	begin
+	
+	 if(is_BG && !is_mario && !is_kuba && !is_fire && !is_life1 && !is_life2 && !is_life3 && !is_mogu && !is_ending)
 	begin 
 		Red = BG_Red;
 		Green = BG_Green;
 		Blue = BG_Blue; 
+	end
+	else if(is_life1)
+	begin
+		Red = live_Red1;
+		Green = live_Blue1;
+		Blue = live_Green1;
+		if (Red == 8'hff && Green == 8'h00 && Blue == 8'h00)
+		begin
+			Red = BG_Red;
+			Green = BG_Green;
+			Blue = BG_Blue; 
+		end
+	end
+	else if(is_life2)
+	begin
+		Red = live_Red2;
+		Green = live_Blue2;
+		Blue = live_Green2;
+		if (Red == 8'hff && Green == 8'h00 && Blue == 8'h00)
+		begin
+			Red = BG_Red;
+			Green = BG_Green;
+			Blue = BG_Blue; 
+		end
+	end
+	else if(is_life3)
+	begin
+		Red = live_Red2;
+		Green = live_Blue2;
+		Blue = live_Green2;
+		if (Red == 8'hff && Green == 8'h00 && Blue == 8'h00)
+		begin
+			Red = BG_Red;
+			Green = BG_Green;
+			Blue = BG_Blue; 
+		end
 	end
 	else if(is_mario)
 	begin
@@ -220,14 +266,49 @@ begin
 			Blue = BG_Blue; 
 		end
 	end
+	else if(is_mogu)
+	begin
+		Red = mogu_Red;
+		Green = mogu_Green;
+		Blue = mogu_Blue;
+		if (Red == 8'hff && Green == 8'h00 && Blue == 8'h00)
+		begin
+			Red = BG_Red;
+			Green = BG_Green;
+			Blue = BG_Blue; 
+		end
+	end
+	else if(is_ending)
+	begin
+		Red = ending_Red;
+		Green = ending_Green;
+		Blue = ending_Blue;
+		if (Red == 8'hff && Green == 8'h00 && Blue == 8'h00)
+		begin
+			// Red = BG_Red;
+			// Green = BG_Green;
+			// Blue = BG_Blue;
+			Red = 8'h000000000;
+		Green = 8'h000000000;
+		Blue = 8'h000000000; 
+		end
+	end
 	else
 	begin
 		Red = 8'h000000000;
 		Green = 8'h000000000;
 		Blue = 8'h000000000;
 	end
+	end
 
+	else
+	begin
+		Red = Start_Red;
+		Green = Start_Green;
+		Blue = Start_Blue;
+	end
 end
+
 
 
 
@@ -289,7 +370,6 @@ draw _draw_mario(
 			.is_this(is_mario)
 );
 
-logic can_up, can_down, can_left, can_right;
 
 wall_detector wall_detector_mario(
     .x_pos(marioxsig), 
@@ -301,7 +381,9 @@ wall_detector wall_detector_mario(
     .can_up(can_up), 
 	.can_down(can_down), 
 	.can_left(can_left), 
-	.can_right(can_right)
+	.can_right(can_right),
+	.at_tube1(at_tube1), .at_tube2(at_tube2), .at_tube3(at_tube3), .at_tube4(at_tube4), .at_tube5(at_tube5), .at_tube6(at_tube6),
+	.at_brick1(at_brick1), .at_brick2(at_brick2), .at_brick3(at_brick3)
 );
 
 
@@ -314,6 +396,10 @@ mario _mario(
 			.can_down(can_down), 
 			.can_left(can_left), 
 			.can_right(can_right),
+			.at_tube1(at_tube1), .at_tube2(at_tube2), .at_tube3(at_tube3), .at_tube4(at_tube4), .at_tube5(at_tube5), .at_tube6(at_tube6),
+			.at_brick1(at_brick1), .at_brick2(at_brick2), .at_brick3(at_brick3),
+			.mogu_eaten(mogu_eaten),
+			.dead_reset(dead_reset),
 
 			.MarioX(marioxsig), 
 			.MarioY(marioysig), 
@@ -322,7 +408,8 @@ mario _mario(
 			.x_offset(x_offset),
 			.y_offset(y_offset),
 			.x_jump_offset(x_jump_offset),
-			.y_jump_offset(y_jump_offset)
+			.y_jump_offset(y_jump_offset),
+			.is_mario_up(is_mario_up)
 		);
 
 Kuba _kuba(
@@ -333,6 +420,7 @@ Kuba _kuba(
 			.DrawX(drawxsig), 
 			.DrawY(drawysig),
 			.BG_step(BG_step),
+			.dead_reset(dead_reset),
 
 			.is_kuba(is_kuba),
 			.Red_kuba(kuba_Red), 
@@ -352,7 +440,9 @@ Fire _fire(
 			.MarioY(marioysig), 
 			.MarioS_X(mario_sizex),
 			.MarioS_Y(mario_sizey),
+			.dead_reset(dead_reset),
 
+			.dead_times(dead_times),
 			.is_fire(is_fire),
 			.Red(fire_Red), 
 			.Green(fire_Green), 
@@ -374,6 +464,7 @@ Background  _Background (
 						.Mario_Y_Pos(marioysig),
 						.BG_step(BG_step),
 						.is_mario(is_mario),
+						.dead_reset(dead_reset),
 
 
 						.is_BG(is_BG),
@@ -383,5 +474,80 @@ Background  _Background (
 						
                );
 
+Beginning  _Beginning ( 
+						.Reset(Reset_h), 
+						.Clk(Clk),
+						.frame_clk(VGA_VS),
+						.keycode(keycode),
+						.BG_step(BG_step),
+						.DrawX(drawxsig), 
+						.DrawY(drawysig),
+						.dead_reset(dead_reset),
+						.is_life2(is_life2),
+
+						.game_on(game_on),
+						.Red(Start_Red), 
+						.Green(Start_Green), 
+						.Blue(Start_Blue)
+						
+               );
+
+Life	_Life (
+			.Reset(Reset_h), 
+			.Clk(Clk),
+			.frame_clk(VGA_VS),
+			.DrawX(drawxsig), 
+			.DrawY(drawysig),
+			.dead_times(dead_times),
+
+			.is_life1(is_life1),
+			.is_life2(is_life2),
+			.is_life3(is_life3),
+			.Red1(live_Red1), 
+			.Green1(live_Green1), 
+			.Blue1(live_Blue1),
+			.Red2(live_Red2), 
+			.Green2(live_Green2), 
+			.Blue2(live_Blue2),
+			.Red3(live_Red3), 
+			.Green3(live_Green3), 
+			.Blue3(live_Blue3)
+);
+
+mogu  _mogu ( 
+                .Reset(Reset_h), 
+				.Clk(Clk),
+				.frame_clk(VGA_VS),
+				.DrawX(drawxsig), 
+				.DrawY(drawysig),
+				.keycode(keycode),
+                .BG_step(BG_step),
+				.can_down(can_down),
+				.is_mario_up(is_mario_up),
+				.dead_reset(dead_reset),
+
+
+				.is_mogu(is_mogu),
+				.Red(mogu_Red), 
+				.Green(mogu_Green), 
+				.Blue(mogu_Blue),
+				.mogu_eaten(mogu_eaten)
+               );
+
+ending  _ending ( 
+                .Reset(Reset_h), 
+				.Clk(Clk),
+				.frame_clk(VGA_VS),
+				.DrawX(drawxsig), 
+				.DrawY(drawysig),
+				.keycode(keycode),
+                .BG_step(BG_step),
+
+
+				.is_ending(is_ending),
+				.Red(ending_Red), 
+				.Green(ending_Green), 
+				.Blue(ending_Blue),
+               );
 
 endmodule

@@ -5,6 +5,7 @@ module  Background (
 				input [31:0] keycode,
                 input [9:0]  DrawX, DrawY,
                 input [9:0]  Mario_X_Pos, Mario_Y_Pos,
+                input logic dead_reset,
                 inout [8:0] BG_step,
                 input is_mario,
                 output [7:0]  Red, Green, Blue,
@@ -75,6 +76,11 @@ module  Background (
             BG_X_Motion <= 10'b0;
             
         end
+        else if (dead_reset)
+        begin
+            BG_step <= BG_X_Home; //Mario_Y_Step;
+            BG_X_Motion <= 10'b0;
+        end
         else
         begin 
         BG_step <= BG_step_in;
@@ -115,32 +121,32 @@ begin
 // '0x800080','0xFEFEFE','0xE75A10','0x007B00','0x008C8C','0x6B8CFF','0x000000'
 
     if (is_BG) begin
-        if (data_sprite == 4'd1) begin
+        if (data_sprite == 3'd1) begin
             Red = 8'hfe;
             Green = 8'hfe;
             Blue = 8'hfe;
         end
-        if (data_sprite == 4'd2) begin
+        if (data_sprite == 3'd2) begin
             Red = 8'he7;
             Green = 8'h5a;
             Blue = 8'h10; 
         end
-        if (data_sprite == 4'd3) begin
+        if (data_sprite == 3'd3) begin
             Red = 8'h00;
             Green = 8'h7b;
             Blue = 8'h00;
         end
-        if (data_sprite == 4'd4) begin
+        if (data_sprite == 3'd4) begin
             Red = 8'h00;
             Green = 8'h8c;
             Blue = 8'h8c;
         end
-        if (data_sprite == 4'd5) begin
+        if (data_sprite == 3'd5) begin
             Red = 8'h6b;
             Green = 8'h8c;
             Blue = 8'hff;
         end
-        if (data_sprite == 4'd6) begin
+        if (data_sprite == 3'd6) begin
             Red = 8'h00;
             Green = 8'h00;
             Blue = 8'h00;
