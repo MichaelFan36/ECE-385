@@ -37,11 +37,11 @@ module  Life (
     always_ff @ (posedge Reset or posedge frame_clk )
     begin: Move_life
         life_Y_Pos1 <= life_Y_Home;
-        life_X_Pos1 <= life_X_Home_3;
+        life_X_Pos1 <= life_X_Home_1;
         life_Y_Pos2 <= life_Y_Home;
         life_X_Pos2 <= life_X_Home_2;
         life_Y_Pos3 <= life_Y_Home;
-        life_X_Pos3 <= life_X_Home_1;
+        life_X_Pos3 <= life_X_Home_3;
     end
        
 
@@ -53,12 +53,12 @@ module  Life (
     assign DistX3 = DrawX - life_X_Pos3;
 	assign DistY3 = DrawY - life_Y_Pos3;
 	always_comb begin
-		if (((DrawX >= life_X_Pos1) && (DrawY >= life_Y_Pos1)) && ((DistX1 < life_X_Size) && (DistY1 < life_Y_Size)) && (dead_times < 250)) // 292
+		if (((DrawX >= life_X_Pos1) && (DrawY >= life_Y_Pos1)) && ((DistX1 < life_X_Size) && (DistY1 < life_Y_Size)) && (dead_times < 200)) // 292
 			is_life1 = 1'b1;
 		else
 			is_life1 = 1'b0;
 
-        if (((DrawX >= life_X_Pos2) && (DrawY >= life_Y_Pos2)) && ((DistX2 < life_X_Size) && (DistY2 < life_Y_Size)) && (dead_times < 60)) // 292
+        if (((DrawX >= life_X_Pos2) && (DrawY >= life_Y_Pos2)) && ((DistX2 < life_X_Size) && (DistY2 < life_Y_Size)) && (dead_times < 100)) // 292
 			is_life2 = 1'b1;
 		else
 			is_life2 = 1'b0;

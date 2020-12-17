@@ -55,6 +55,8 @@ module  Kuba (
 
     parameter [9:0] kuba_X_Home= 370; //420;  // Center position on the X axis 400
     parameter [9:0] kuba_Y_Home= 290;  // Center position on the Y axis 270
+    parameter [9:0] kuba_X_Home_space = 1000;  // Center position on the X axis 400
+    parameter [9:0] kuba_Y_Home_space = 1000;  // Center position on the Y axis 270
     parameter [9:0] kuba_X_Min=0;       // Leftmost point on the X axis
     parameter [9:0] kuba_X_Max=0;     // Rightmost point on the X axis
     parameter [9:0] kuba_Y_Min=10;       // Topmost point on the Y axis
@@ -91,6 +93,7 @@ module  Kuba (
     assign down_on = (keycode[31:24] == 8'h16 | keycode[23:16] == 8'h16 | keycode[15: 8] == 8'h16 | keycode[ 7: 0] == 8'h16);
     assign left_on = (keycode[31:24] == 8'h04 | keycode[23:16] == 8'h04 | keycode[15: 8] == 8'h04 | keycode[ 7: 0] == 8'h04);
     assign right_on = (keycode[31:24] == 8'h07 | keycode[23:16] == 8'h07 | keycode[15: 8] == 8'h07 | keycode[ 7: 0] == 8'h07);
+    assign space_on = (keycode[31:24] == 8'h2C | keycode[23:16] == 8'h2C | keycode[15: 8] == 8'h2C | keycode[ 7: 0] == 8'h2C);
 
     assign is_kuba_appeared = is_on;
     // assign counter_background = (~(bg_displacement) + 1'b1);
@@ -121,7 +124,7 @@ module  Kuba (
 		
 		unique case (State)
             stand: 
-				if (BG_step > 280)  // 292 
+				if (BG_step > 280 && BG_step < 360)  // 292 
                     begin
 					Next_state = ready;
                     is_on = 1'b1;
@@ -260,7 +263,7 @@ module  Kuba (
 
 
 
-        always_ff @ (posedge Reset or posedge Clk_5Hz or posedge dead_reset)
+        always_ff @ (posedge Reset or posedge Clk_5Hz or posedge dead_reset or posedge space_on)
     begin: fast_Move_kuba
         if (Reset )  // Asynchdaronous Reset
         begin 
@@ -283,6 +286,14 @@ module  Kuba (
             kuba_X_Pos <= kuba_X_Home;
             State <= stand;
         end
+        else if (space_on)
+            begin
+            kuba_Y_Motion <= 10'b0; //kuba_Y_Step;
+            kuba_X_Motion <= 10'b0; //kuba_X_Step;
+            kuba_Y_Pos <= kuba_Y_Home_space;
+            kuba_X_Pos <= kuba_X_Home_space;
+            State <= stand;
+            end
         else 
         begin  
             kuba_X_Pos <= kuba_X_Pos_in;

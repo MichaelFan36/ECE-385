@@ -1,4 +1,11 @@
 
+State Machine - |lab8|Princess:_Princess|State
+Name State.ready State.move2 State.move1 State.stand 
+State.stand 0 0 0 0 
+State.move1 0 0 1 1 
+State.move2 0 1 0 1 
+State.ready 1 0 0 1 
+
 State Machine - |lab8|mogu:_mogu|State
 Name State.ready State.disappear State.fall 
 State.ready 0 0 0 

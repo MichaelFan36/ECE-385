@@ -1,11 +1,11 @@
-Fitter Status : Successful - Fri Oct 30 02:58:04 2020
+Fitter Status : Successful - Wed Dec 16 13:24:03 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : lab8
 Top-level Entity Name : lab8
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 4,010 / 49,760 ( 8 % )
+Total logic elements : 3,995 / 49,760 ( 8 % )
     Total combinational functions : 3,419 / 49,760 ( 7 % )
     Dedicated logic registers : 2,443 / 49,760 ( 5 % )
 Total registers : 2512

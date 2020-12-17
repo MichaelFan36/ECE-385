@@ -48,6 +48,8 @@ module  Fire (
 
     parameter [9:0] fire_X_Home= 340;  // Center position on the X axis 400
     parameter [9:0] fire_Y_Home= 320;  // Center position on the Y axis 270
+    parameter [9:0] fire_X_Home_space = 1000;  // Center position on the X axis 400
+    parameter [9:0] fire_Y_Home_space = 1000;  // Center position on the Y axis 270
     parameter [9:0] fire_X_Min= 0;       // Leftmost point on the X axis
     parameter [9:0] fire_X_Max= 0;     // Rightmost point on the X axis
     parameter [9:0] fire_Y_Min= 10;       // Topmost point on the Y axis
@@ -78,6 +80,7 @@ module  Fire (
     assign down_on = (keycode[31:24] == 8'h16 | keycode[23:16] == 8'h16 | keycode[15: 8] == 8'h16 | keycode[ 7: 0] == 8'h16);
     assign left_on = (keycode[31:24] == 8'h04 | keycode[23:16] == 8'h04 | keycode[15: 8] == 8'h04 | keycode[ 7: 0] == 8'h04);
     assign right_on = (keycode[31:24] == 8'h07 | keycode[23:16] == 8'h07 | keycode[15: 8] == 8'h07 | keycode[ 7: 0] == 8'h07);
+    assign space_on = (keycode[31:24] == 8'h2C | keycode[23:16] == 8'h2C | keycode[15: 8] == 8'h2C | keycode[ 7: 0] == 8'h2C);
 
     logic Clk_5Hz;
 
@@ -89,7 +92,7 @@ module  Fire (
 		
 		unique case (State)
             stand: 
-				if (BG_step > 292)  // 292 
+				if (BG_step > 292 && BG_step < 360)  // 292 
                     begin
 					Next_state = ready;
                     is_on = 1'b1;
@@ -172,7 +175,7 @@ module  Fire (
                 begin
                 fire_X_Motion_in = (~(counter_background) + 1'b1);
                 end 
-                if ((MarioY) <= (fire_Y_Pos + jump_Step_forward))
+                if ((MarioY) == (fire_Y_Pos + jump_Step_forward))
                     begin
                     dead_times_in = dead_times + dead_offset;
                     dead_reset = 1'b1;
@@ -218,7 +221,7 @@ module  Fire (
                 begin
                 fire_X_Motion_in = (~(counter_background) + 1'b1);
                 end 
-                if ((MarioY) <= (fire_Y_Pos + jump_Step_forward))
+                if ((MarioY) == (fire_Y_Pos + jump_Step_forward))
                     begin
                     dead_times_in = dead_times + dead_offset;
                     dead_reset = 1'b1;
@@ -245,7 +248,7 @@ module  Fire (
         fire_Y_Pos_in = (fire_Y_Pos + fire_Y_Motion);
     end
        
-    always_ff @ (posedge Reset or posedge Clk_5Hz or posedge dead_reset)
+    always_ff @ (posedge Reset or posedge Clk_5Hz or posedge dead_reset or posedge space_on)
     begin: Move_fire
         if (Reset)  // Asynchronous Reset
         begin 
@@ -265,6 +268,15 @@ module  Fire (
             State <= stand;
             dead_times <= dead_times_in;
 		  end
+        else if (space_on)
+            begin
+            fire_Y_Motion <= 10'b0; //fire_Y_Step;
+            fire_X_Motion <= 10'b0; //fire_X_Step;
+            fire_Y_Pos <= fire_Y_Home_space;
+            fire_X_Pos <= fire_X_Home_space;
+            State <= stand;
+            dead_times <= initial_dead_times;
+            end
         else
         begin  
             fire_X_Pos <= fire_X_Pos_in;

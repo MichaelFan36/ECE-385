@@ -1,0 +1,328 @@
+module slowClock_5HZ_princess ( Clk, Reset, Clk_5Hz);
+
+input Clk, Reset;
+output Clk_5Hz;
+
+reg Clk_5Hz = 1'b0;
+reg [28:0] counter;
+
+always@(posedge Reset or posedge Clk)
+begin
+if (Reset == 1'b1) 
+begin
+	Clk_5Hz <= 0;
+	counter <= 0;
+end
+else
+begin
+counter <= counter+1;
+if (counter == 3_000_000)
+begin
+counter <= 0;
+Clk_5Hz <= ~Clk_5Hz;
+end
+end
+end
+endmodule
+
+module  Princess ( 
+                input logic Reset, 
+                input logic Clk,
+                input logic frame_clk,
+				input logic [31:0] keycode,
+                input logic [9:0] DrawX, DrawY,
+                input logic [8:0] BG_step,
+
+
+                output logic [7:0]  Red, Green, Blue,
+                inout logic is_princess
+               );
+    
+    
+    logic [9:0] princess_X_Pos, princess_X_Motion, princess_Y_Pos, princess_Y_Motion, princess_Size,princess_X_Size,princess_Y_Size;
+	 logic [9:0] princess_Y_Pos_in, princess_X_Pos_in, princess_X_Motion_in, princess_Y_Motion_in;
+    logic [18:0] PrincessReadAdd;
+
+    parameter [9:0] princess_X_Home= 315;  // Center position on the X axis 400
+    parameter [9:0] princess_Y_Home= 368;  // Center position on the Y axis 270
+    parameter [9:0] princess_X_Min= 0;       // Leftmost point on the X axis
+    parameter [9:0] princess_X_Max= 0;     // Rightmost point on the X axis
+    parameter [9:0] princess_Y_Min= 10;       // Topmost point on the Y axis
+    parameter [9:0] princess_Y_Max= 400;     // Bottommost point on the Y axis
+    parameter [9:0] princess_X_Step= 4;      // Step size on the X axis
+    parameter [9:0] princess_Y_Step= 4;      // Step size on the Y axis
+
+
+    assign princess_X_Size = 48;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign princess_Y_Size = 16;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+	 
+    enum logic [1:0] {stand, move1, move2, ready} State, Next_state;
+    logic is_on;
+
+    logic Clk_5Hz;
+
+    slowClock_5HZ_princess Clock_5Hz_princess(.Clk(Clk), .Reset(Reset), .Clk_5Hz(Clk_5Hz));
+
+   always_comb
+	begin 
+		Next_state = State;
+		
+		unique case (State)
+            stand: 
+				if (BG_step > 350)  // 292 
+                    begin
+					Next_state = ready;
+                    is_on = 1'b1;
+                    end
+                else
+                    begin
+                    Next_state = stand;
+                    is_on = 1'b0;
+                    end
+			ready: 
+                begin
+                Next_state = move1;   
+                is_on = 1'b1;
+                end        
+			move1 :
+                begin 
+                Next_state = move2;
+                is_on = 1'b1;
+                end
+			move2 :
+                begin
+                Next_state = move1;
+                is_on = 1'b1;
+                end
+
+			default : 
+                begin
+				Next_state = stand;
+                is_on = 1'b0;
+                end
+		endcase
+	end
+
+    always_comb
+    begin
+            if (State == ready )
+            begin
+                dead_times_in = dead_times;
+                dead_reset = 1'b0;
+                if ((MarioX + MarioS_X) <= (princess_X_Pos + ((~jump_Step_forward) + 1'b1) ))
+				princess_X_Motion_in = ((~jump_Step_forward) + 1'b1);
+                else
+                princess_X_Motion_in = 10'b0;
+
+                if ((MarioY) >= (princess_Y_Pos + jump_Step_forward))
+				princess_Y_Motion_in = jump_Step_forward;
+                else
+                princess_Y_Motion_in = 10'b0;
+            end	 
+
+            else if(State == move1)
+            begin
+                dead_times_in = dead_times;
+                dead_reset = 1'b0;
+                if ((MarioX + MarioS_X) <= (princess_X_Pos + ((~jump_Step_forward) + 1'b1) ))
+                begin 
+				princess_X_Motion_in = ((~jump_Step_forward) + 1'b1);
+
+                if (left_on)
+                begin
+                princess_X_Motion_in = counter_background + (~(jump_Step_forward) + 1'b1);
+                end
+                
+                if (right_on)
+                begin
+                princess_X_Motion_in = (~(jump_Step_forward + counter_background) + 1'b1);
+                end 
+                end
+                
+                else
+                begin
+                princess_X_Motion_in = 10'b0;
+
+                if (left_on)
+                begin
+                princess_X_Motion_in = counter_background;
+                end
+                
+                if (right_on)
+                begin
+                princess_X_Motion_in = (~(counter_background) + 1'b1);
+                end 
+                if ((MarioY) <= (princess_Y_Pos + jump_Step_forward))
+                    begin
+                    dead_times_in = dead_times + dead_offset;
+                    dead_reset = 1'b1;
+                    end
+                end
+
+                if ((MarioY) > (princess_Y_Pos + jump_Step_forward))
+				princess_Y_Motion_in = jump_Step_forward;
+                else if ((MarioY) < (princess_Y_Pos + jump_Step_forward))
+                princess_Y_Motion_in = ((~jump_Step_forward) + 1'b1);
+                else
+                princess_Y_Motion_in = 10'b0; 
+
+            end	
+
+            else if(State == move2)
+            begin
+                dead_times_in = dead_times;
+                dead_reset = 1'b0;
+                if ((MarioX + MarioS_X) <= (princess_X_Pos + ((~jump_Step_forward) + 1'b1) ))
+                begin 
+
+				princess_X_Motion_in = ((~jump_Step_forward) + 1'b1);
+                if (left_on)
+                begin
+                princess_X_Motion_in = counter_background + (~(jump_Step_forward) + 1'b1);
+                end
+                if (right_on)
+                begin
+                princess_X_Motion_in = (~(jump_Step_forward + counter_background) + 1'b1);
+                end 
+                end
+                
+                else
+                begin
+                    
+                princess_X_Motion_in = 10'b0;
+                if (left_on)
+                begin
+                princess_X_Motion_in = counter_background;
+                end
+                if (right_on)
+                begin
+                princess_X_Motion_in = (~(counter_background) + 1'b1);
+                end 
+                if ((MarioY) <= (princess_Y_Pos + jump_Step_forward))
+                    begin
+                    dead_times_in = dead_times + dead_offset;
+                    dead_reset = 1'b1;
+                    end
+                end
+
+                if ((MarioY) > (princess_Y_Pos + jump_Step_forward))
+				princess_Y_Motion_in = jump_Step_forward;
+                else if ((MarioY) < (princess_Y_Pos + jump_Step_forward))
+                princess_Y_Motion_in = ((~jump_Step_forward) + 1'b1);
+                else
+                princess_Y_Motion_in = 10'b0; 
+
+            end
+
+            else
+            begin
+				princess_Y_Motion_in = 10'b0;
+                princess_X_Motion_in = 10'b0;
+                dead_times_in = dead_times;
+                dead_reset = 1'b0;
+            end
+        princess_X_Pos_in = (princess_X_Pos + princess_X_Motion);
+        princess_Y_Pos_in = (princess_Y_Pos + princess_Y_Motion);
+    end
+       
+    always_ff @ (posedge Reset or posedge Clk_5Hz or posedge dead_reset)
+    begin: Move_princess
+        if (Reset)  // Asynchronous Reset
+        begin 
+            princess_Y_Motion <= 10'b0; //princess_Y_Step;
+            princess_X_Motion <= 10'b0; //princess_X_Step;
+            princess_Y_Pos <= princess_Y_Home;
+            princess_X_Pos <= princess_X_Home;
+            State <= stand;
+        end
+        else
+        begin  
+            princess_X_Pos <= princess_X_Home;
+            princess_Y_Pos <= princess_Y_Home;
+            princess_Y_Motion <= princess_Y_Motion_in;
+            princess_X_Motion <= princess_X_Motion_in;
+            State <= Next_state;
+        end
+
+    end
+
+    int DistX, DistY;
+	assign DistX = DrawX - princess_X_Pos;
+	assign DistY = DrawY - princess_Y_Pos;
+	always_comb begin
+		if (((DrawX >= princess_X_Pos) && (DrawY >= princess_Y_Pos)) && ((DistX < princess_X_Size) && (DistY < princess_Y_Size)) && is_on) // 292
+			is_princess = 1'b1;
+		else
+			is_princess = 1'b0;
+	end
+
+    int enlarge_DrawX, enlarge_DrawY;
+	assign enlarge_DrawX = (DrawX - princess_X_Pos)/ 2;
+    assign enlarge_DrawY = (DrawY - princess_Y_Pos)/2;
+    always_comb 
+    begin
+		PrincessReadAdd = 18'b0;
+		if (is_princess) begin
+            PrincessReadAdd = (enlarge_DrawX + 43) + (enlarge_DrawY + 144) * 188;
+        end
+    end
+       
+    logic [3:0] data_sprite;
+
+mario_frameRAM _princess_frameRAM(.read_address(PrincessReadAdd), .data_Out(data_sprite), .*);
+
+always_comb
+begin
+    Red = 8'hff;
+    Green = 8'h00;
+    Blue = 8'h00;
+    if (is_princess) begin
+        if (data_sprite == 4'd1) begin
+            Red = 8'hff;
+            Green = 8'hfd;
+            Blue = 8'hfb;
+        end
+        if (data_sprite == 4'd2) begin
+            Red = 8'hb5;
+            Green = 8'h31;
+            Blue = 8'h21; 
+        end
+        if (data_sprite == 4'd3) begin
+            Red = 8'hf8;
+            Green = 8'h38;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd4) begin
+            Red = 8'he1;
+            Green = 8'h83;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd5) begin
+            Red = 8'h1d;
+            Green = 8'h7b;
+            Blue = 8'h01;
+        end
+        if (data_sprite == 4'd6) begin
+            Red = 8'hac;
+            Green = 8'h7c;
+            Blue = 8'h00;
+        end
+        if (data_sprite == 4'd7) begin
+            Red = 8'hd4;
+            Green = 8'he7;
+            Blue = 8'hc7;
+        end
+        if (data_sprite == 4'd8) begin
+            Red = 8'h05;
+            Green = 8'h79;
+            Blue = 8'h87;
+        end
+        if (data_sprite == 4'd9) begin
+            Red = 8'h00;
+            Green = 8'h00;
+            Blue = 8'h00;
+        end
+    end
+end
+
+endmodule

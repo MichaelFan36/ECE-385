@@ -169,12 +169,12 @@ logic [7:0] BG_Red, BG_Blue, BG_Green;
 logic [7:0] mogu_Red, mogu_Blue, mogu_Green;
 logic [7:0] kuba_Red, kuba_Blue, kuba_Green;
 logic [7:0] fire_Red, fire_Blue, fire_Green;
-logic [7:0] ending_Red, ending_Blue, ending_Green;
 logic [7:0] Start_Red, Start_Blue, Start_Green;
+logic [7:0] Princess_Red, Princess_Blue, Princess_Green;
 logic [7:0] live_Red1, live_Green1, live_Blue1, live_Red2, live_Green2, live_Blue2, live_Red3, live_Green3, live_Blue3;
 logic is_mario, is_BG,is_jump, is_mario_up;
 wire [8:0] dead_times;
-wire is_kuba, is_fire, game_on, is_life1, is_life2, is_life3, is_mogu, is_ending, dead_reset;
+wire is_kuba, is_fire, game_on, is_life1, is_life2, is_life3, is_mogu, is_ending, dead_reset, is_princess;
 wire [8:0] BG_step;
 int x_offset, y_offset, x_jump_offset, y_jump_offset;
 
@@ -188,11 +188,17 @@ begin
 	if (game_on)
 	begin
 	
-	 if(is_BG && !is_mario && !is_kuba && !is_fire && !is_life1 && !is_life2 && !is_life3 && !is_mogu && !is_ending)
+	if(is_BG && !is_mario && !is_kuba && !is_fire && !is_life1 && !is_life2 && !is_life3 && !is_mogu && !is_princess)
 	begin 
 		Red = BG_Red;
 		Green = BG_Green;
 		Blue = BG_Blue; 
+		if (BG_step > 400)
+		begin
+		Red = 8'hff;
+		Green = 8'h69;
+		Blue = 8'hb4; 
+		end
 	end
 	else if(is_life1)
 	begin
@@ -203,7 +209,13 @@ begin
 		begin
 			Red = BG_Red;
 			Green = BG_Green;
-			Blue = BG_Blue; 
+			Blue = BG_Blue;
+			if (BG_step > 400)
+			begin
+			Red = 8'hff;
+			Green = 8'h69;
+			Blue = 8'hb4; 
+			end
 		end
 	end
 	else if(is_life2)
@@ -217,17 +229,29 @@ begin
 			Green = BG_Green;
 			Blue = BG_Blue; 
 		end
+		if (BG_step > 400)
+		begin
+		Red = 8'hff;
+		Green = 8'h69;
+		Blue = 8'hb4; 
+		end
 	end
 	else if(is_life3)
 	begin
-		Red = live_Red2;
-		Green = live_Blue2;
-		Blue = live_Green2;
+		Red = live_Red3;
+		Green = live_Blue3;
+		Blue = live_Green3;
 		if (Red == 8'hff && Green == 8'h00 && Blue == 8'h00)
 		begin
 			Red = BG_Red;
 			Green = BG_Green;
 			Blue = BG_Blue; 
+		end
+		if (BG_step > 400)
+		begin
+		Red = 8'hff;
+		Green = 8'h69;
+		Blue = 8'hb4; 
 		end
 	end
 	else if(is_mario)
@@ -239,7 +263,13 @@ begin
 		begin
 			Red = BG_Red;
 			Green = BG_Green;
-			Blue = BG_Blue; 
+			Blue = BG_Blue;
+		if (BG_step > 400)
+		begin
+		Red = 8'hff;
+		Green = 8'h69;
+		Blue = 8'hb4; 
+		end	
 		end
 	end
 	else if(is_fire)
@@ -278,19 +308,22 @@ begin
 			Blue = BG_Blue; 
 		end
 	end
-	else if(is_ending)
+	else if(is_princess)
 	begin
-		Red = ending_Red;
-		Green = ending_Green;
-		Blue = ending_Blue;
+		Red = Princess_Red;
+		Green = Princess_Green;
+		Blue = Princess_Blue;
 		if (Red == 8'hff && Green == 8'h00 && Blue == 8'h00)
 		begin
-			// Red = BG_Red;
-			// Green = BG_Green;
-			// Blue = BG_Blue;
-			Red = 8'h000000000;
-		Green = 8'h000000000;
-		Blue = 8'h000000000; 
+		Red = BG_Red;
+			Green = BG_Green;
+			Blue = BG_Blue;
+		if (BG_step > 400)
+		begin
+		Red = 8'hff;
+		Green = 8'h69;
+		Blue = 8'hb4; 
+		end	
 		end
 	end
 	else
@@ -534,7 +567,7 @@ mogu  _mogu (
 				.mogu_eaten(mogu_eaten)
                );
 
-ending  _ending ( 
+Princess  _Princess ( 
                 .Reset(Reset_h), 
 				.Clk(Clk),
 				.frame_clk(VGA_VS),
@@ -544,10 +577,10 @@ ending  _ending (
                 .BG_step(BG_step),
 
 
-				.is_ending(is_ending),
-				.Red(ending_Red), 
-				.Green(ending_Green), 
-				.Blue(ending_Blue),
+				.is_princess(is_princess),
+				.Red(Princess_Red), 
+				.Green(Princess_Green), 
+				.Blue(Princess_Blue),
                );
 
 endmodule

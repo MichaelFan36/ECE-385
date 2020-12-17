@@ -1,5 +1,5 @@
 Timing Analyzer report for lab8
-Thu Dec 10 12:13:46 2020
+Wed Dec 16 13:09:30 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -94,12 +94,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 3.60        ;
+; Average used               ; 3.66        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;  17.3%      ;
+;     Processors 2-16        ;  17.7%      ;
 +----------------------------+-------------+
 
 
@@ -108,9 +108,9 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                              ; Status ; Read at                  ;
 +----------------------------------------------------------------------------+--------+--------------------------+
-; lab8_soc/synthesis/submodules/altera_reset_controller.sdc                  ; OK     ; Thu Dec 10 12:13:42 2020 ;
-; lab8_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc ; OK     ; Thu Dec 10 12:13:42 2020 ;
-; lab8_soc/synthesis/submodules/lab8_soc_nios2_gen2_0_cpu.sdc                ; OK     ; Thu Dec 10 12:13:42 2020 ;
+; lab8_soc/synthesis/submodules/altera_reset_controller.sdc                  ; OK     ; Wed Dec 16 13:09:26 2020 ;
+; lab8_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc ; OK     ; Wed Dec 16 13:09:26 2020 ;
+; lab8_soc/synthesis/submodules/lab8_soc_nios2_gen2_0_cpu.sdc                ; OK     ; Wed Dec 16 13:09:26 2020 ;
 +----------------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -128,7 +128,7 @@ refer to the applicable agreement for further details.
 +------------+-----------------+---------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
 +------------+-----------------+---------------------+------+
-; 125.06 MHz ; 125.06 MHz      ; altera_reserved_tck ;      ;
+; 123.92 MHz ; 123.92 MHz      ; altera_reserved_tck ;      ;
 +------------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -138,7 +138,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 46.002 ; 0.000         ;
+; altera_reserved_tck ; 45.965 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -156,7 +156,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 48.285 ; 0.000         ;
+; altera_reserved_tck ; 48.418 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -165,7 +165,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 1.170 ; 0.000         ;
+; altera_reserved_tck ; 0.980 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -174,7 +174,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+--------------------+
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
-; altera_reserved_tck ; 49.629 ; 0.000              ;
+; altera_reserved_tck ; 49.623 ; 0.000              ;
 +---------------------+--------+--------------------+
 
 
@@ -187,7 +187,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 3
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.333
-Worst Case Available Settling Time: 197.139 ns
+Worst Case Available Settling Time: 196.965 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -201,7 +201,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +------------+-----------------+---------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
 +------------+-----------------+---------------------+------+
-; 131.89 MHz ; 131.89 MHz      ; altera_reserved_tck ;      ;
+; 134.08 MHz ; 134.08 MHz      ; altera_reserved_tck ;      ;
 +------------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -211,7 +211,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 46.209 ; 0.000         ;
+; altera_reserved_tck ; 46.271 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -229,7 +229,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 48.440 ; 0.000         ;
+; altera_reserved_tck ; 48.566 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -238,7 +238,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 1.068 ; 0.000         ;
+; altera_reserved_tck ; 0.904 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -247,7 +247,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; altera_reserved_tck ; 49.658 ; 0.000             ;
+; altera_reserved_tck ; 49.648 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -260,7 +260,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 3
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.333
-Worst Case Available Settling Time: 197.384 ns
+Worst Case Available Settling Time: 197.227 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -274,7 +274,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 48.494 ; 0.000         ;
+; altera_reserved_tck ; 48.493 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -283,7 +283,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.148 ; 0.000         ;
+; altera_reserved_tck ; 0.147 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -292,7 +292,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 49.499 ; 0.000         ;
+; altera_reserved_tck ; 49.559 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -301,7 +301,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.496 ; 0.000         ;
+; altera_reserved_tck ; 0.425 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -310,7 +310,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; altera_reserved_tck ; 49.414 ; 0.000             ;
+; altera_reserved_tck ; 49.424 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -323,7 +323,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 3
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.333
-Worst Case Available Settling Time: 198.795 ns
+Worst Case Available Settling Time: 198.721 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -337,8 +337,8 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +----------------------+--------+-------+----------+---------+---------------------+
 ; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack     ; 46.002 ; 0.148 ; 48.285   ; 0.496   ; 49.414              ;
-;  altera_reserved_tck ; 46.002 ; 0.148 ; 48.285   ; 0.496   ; 49.414              ;
+; Worst-case Slack     ; 45.965 ; 0.147 ; 48.418   ; 0.425   ; 49.424              ;
+;  altera_reserved_tck ; 45.965 ; 0.147 ; 48.418   ; 0.425   ; 49.424              ;
 ; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
 +----------------------+--------+-------+----------+---------+---------------------+
@@ -1013,29 +1013,29 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 10    ; 10   ;
 ; Unconstrained Input Ports       ; 23    ; 23   ;
-; Unconstrained Input Port Paths  ; 404   ; 404  ;
+; Unconstrained Input Port Paths  ; 439   ; 439  ;
 ; Unconstrained Output Ports      ; 102   ; 102  ;
-; Unconstrained Output Port Paths ; 3119  ; 3119 ;
+; Unconstrained Output Port Paths ; 3731  ; 3731 ;
 +---------------------------------+-------+------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Clock Status Summary                                                                                          ;
-+------------------------------------------------------------------+---------------------+------+---------------+
-; Target                                                           ; Clock               ; Type ; Status        ;
-+------------------------------------------------------------------+---------------------+------+---------------+
-; Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz ;                     ; Base ; Unconstrained ;
-; Clk                                                              ;                     ; Base ; Unconstrained ;
-; Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz             ;                     ; Base ; Unconstrained ;
-; KEY[0]                                                           ;                     ; Base ; Unconstrained ;
-; Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz             ;                     ; Base ; Unconstrained ;
-; altera_reserved_tck                                              ; altera_reserved_tck ; Base ; Constrained   ;
-; ending:_ending|slowClock_5HZ_ending:Clock_5Hz_ending|Clk_5Hz     ;                     ; Base ; Unconstrained ;
-; mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz               ;                     ; Base ; Unconstrained ;
-; mogu:_mogu|slowClock_5HZ_mogu:Clock_5Hz_mogu|Clk_5Hz             ;                     ; Base ; Unconstrained ;
-; vga_controller:vga|clkdiv                                        ;                     ; Base ; Unconstrained ;
-; vga_controller:vga|vs                                            ;                     ; Base ; Unconstrained ;
-+------------------------------------------------------------------+---------------------+------+---------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                              ;
++----------------------------------------------------------------------+---------------------+------+---------------+
+; Target                                                               ; Clock               ; Type ; Status        ;
++----------------------------------------------------------------------+---------------------+------+---------------+
+; Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz     ;                     ; Base ; Unconstrained ;
+; Clk                                                                  ;                     ; Base ; Unconstrained ;
+; Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz                 ;                     ; Base ; Unconstrained ;
+; KEY[0]                                                               ;                     ; Base ; Unconstrained ;
+; Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz                 ;                     ; Base ; Unconstrained ;
+; Princess:_Princess|slowClock_5HZ_princess:Clock_5Hz_princess|Clk_5Hz ;                     ; Base ; Unconstrained ;
+; altera_reserved_tck                                                  ; altera_reserved_tck ; Base ; Constrained   ;
+; mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz                   ;                     ; Base ; Unconstrained ;
+; mogu:_mogu|slowClock_5HZ_mogu:Clock_5Hz_mogu|Clk_5Hz                 ;                     ; Base ; Unconstrained ;
+; vga_controller:vga|clkdiv                                            ;                     ; Base ; Unconstrained ;
+; vga_controller:vga|vs                                                ;                     ; Base ; Unconstrained ;
++----------------------------------------------------------------------+---------------------+------+---------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -1326,7 +1326,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Dec 10 12:13:39 2020
+    Info: Processing started: Wed Dec 16 13:09:24 2020
 Info: Command: quartus_sta lab8 -c lab8
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Default" -- entity does not exist in design
@@ -1358,7 +1358,7 @@ Warning (18236): Number of processors has not been specified which may cause ove
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): The Timing Analyzer is analyzing 9 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): The Timing Analyzer is analyzing 12 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity alt_jtag_atlantic
         Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|jupdate}] -to [get_registers {*|alt_jtag_atlantic:*|jupdate1*}] 
@@ -1399,62 +1399,181 @@ Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDr
     Warning (332126): Node "dead_times[8]~2|combout"
     Warning (332126): Node "_fire|Add3~14|datad"
     Warning (332126): Node "_fire|Add3~14|combout"
-    Warning (332126): Node "dead_times[8]~2|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 223
-    Warning (332126): Node "_fire|Add3~12|dataa"
+    Warning (332126): Node "dead_times[8]~2|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 226
     Warning (332126): Node "_fire|Add3~12|combout"
     Warning (332126): Node "dead_times[7]~7|datad"
     Warning (332126): Node "dead_times[7]~7|combout"
-Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 223
-    Warning (332126): Node "_fire|Add3~10|dataa"
+    Warning (332126): Node "_fire|Add3~12|dataa"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 226
+    Warning (332126): Node "_fire|Add3~10|datab"
     Warning (332126): Node "_fire|Add3~10|combout"
-    Warning (332126): Node "dead_times[6]~12|datad"
+    Warning (332126): Node "dead_times[6]~12|datac"
     Warning (332126): Node "dead_times[6]~12|combout"
-Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 223
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 226
     Warning (332126): Node "_fire|Add3~8|dataa"
     Warning (332126): Node "_fire|Add3~8|combout"
-    Warning (332126): Node "dead_times[5]~17|datac"
+    Warning (332126): Node "dead_times[5]~17|datab"
     Warning (332126): Node "dead_times[5]~17|combout"
-Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 223
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 226
     Warning (332126): Node "_fire|Add3~6|datab"
     Warning (332126): Node "_fire|Add3~6|combout"
-    Warning (332126): Node "dead_times[4]~22|datac"
+    Warning (332126): Node "dead_times[4]~22|datad"
     Warning (332126): Node "dead_times[4]~22|combout"
-Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 223
-    Warning (332126): Node "_fire|Add3~4|datab"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 226
+    Warning (332126): Node "_fire|Add3~4|dataa"
     Warning (332126): Node "_fire|Add3~4|combout"
-    Warning (332126): Node "dead_times[3]~27|datad"
+    Warning (332126): Node "dead_times[3]~27|datac"
     Warning (332126): Node "dead_times[3]~27|combout"
-Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 223
-    Warning (332126): Node "_fire|Add3~2|dataa"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 226
+    Warning (332126): Node "_fire|Add3~2|datab"
     Warning (332126): Node "_fire|Add3~2|combout"
     Warning (332126): Node "dead_times[2]~32|datad"
     Warning (332126): Node "dead_times[2]~32|combout"
-Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 223
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/fire.sv Line: 226
     Warning (332126): Node "_fire|Add3~0|datab"
     Warning (332126): Node "_fire|Add3~0|combout"
-    Warning (332126): Node "dead_times[1]~37|datab"
+    Warning (332126): Node "dead_times[1]~37|datad"
     Warning (332126): Node "dead_times[1]~37|combout"
+Warning (332125): Found combinational loop of 117 nodes File: C:/Users/cozyn/OneDrive/Desktop/ECE385/FinalProject/kuba.sv Line: 299
+    Warning (332126): Node "_kuba|kuba_Y_Pos[9]~12|combout"
+    Warning (332126): Node "_fire|fire_Y_Pos[9]~2|datad"
+    Warning (332126): Node "_fire|fire_Y_Pos[9]~2|combout"
+    Warning (332126): Node "_fire|Add2~16|dataa"
+    Warning (332126): Node "_fire|Add2~16|combout"
+    Warning (332126): Node "_fire|dead_reset~5|datac"
+    Warning (332126): Node "_fire|dead_reset~5|combout"
+    Warning (332126): Node "_fire|dead_reset~6|datad"
+    Warning (332126): Node "_fire|dead_reset~6|combout"
+    Warning (332126): Node "_kuba|kuba_Y_Pos[9]~12|datad"
+    Warning (332126): Node "_kuba|kuba_Y_Pos[9]~13|datad"
+    Warning (332126): Node "_kuba|kuba_Y_Pos[9]~13|combout"
+    Warning (332126): Node "_fire|fire_Y_Pos[9]~2|datac"
+    Warning (332126): Node "_fire|fire_Y_Pos[7]~4|datac"
+    Warning (332126): Node "_fire|fire_Y_Pos[7]~4|combout"
+    Warning (332126): Node "_fire|Add2~12|dataa"
+    Warning (332126): Node "_fire|Add2~12|cout"
+    Warning (332126): Node "_fire|Add2~14|cin"
+    Warning (332126): Node "_fire|Add2~14|combout"
+    Warning (332126): Node "_fire|dead_reset~3|datab"
+    Warning (332126): Node "_fire|dead_reset~3|combout"
+    Warning (332126): Node "_fire|dead_reset~4|dataa"
+    Warning (332126): Node "_fire|dead_reset~4|combout"
+    Warning (332126): Node "_fire|dead_reset~5|datab"
+    Warning (332126): Node "_fire|Add2~14|cout"
+    Warning (332126): Node "_fire|Add2~16|cin"
+    Warning (332126): Node "_fire|Add2~12|combout"
+    Warning (332126): Node "_fire|dead_reset~3|datad"
+    Warning (332126): Node "_fire|fire_Y_Pos[5]~6|datac"
+    Warning (332126): Node "_fire|fire_Y_Pos[5]~6|combout"
+    Warning (332126): Node "_fire|Add2~8|datab"
+    Warning (332126): Node "_fire|Add2~8|cout"
+    Warning (332126): Node "_fire|Add2~10|cin"
+    Warning (332126): Node "_fire|Add2~10|combout"
+    Warning (332126): Node "_fire|dead_reset~2|datac"
+    Warning (332126): Node "_fire|dead_reset~2|combout"
+    Warning (332126): Node "_fire|dead_reset~4|datad"
+    Warning (332126): Node "_fire|Add2~10|cout"
+    Warning (332126): Node "_fire|Add2~12|cin"
+    Warning (332126): Node "_fire|Add2~8|combout"
+    Warning (332126): Node "_fire|dead_reset~2|datad"
+    Warning (332126): Node "_fire|fire_Y_Pos[3]~0|datad"
+    Warning (332126): Node "_fire|fire_Y_Pos[3]~0|combout"
+    Warning (332126): Node "_fire|Add2~4|datab"
+    Warning (332126): Node "_fire|Add2~4|cout"
+    Warning (332126): Node "_fire|Add2~6|cin"
+    Warning (332126): Node "_fire|Add2~6|combout"
+    Warning (332126): Node "_fire|dead_reset~1|datad"
+    Warning (332126): Node "_fire|dead_reset~1|combout"
+    Warning (332126): Node "_fire|dead_reset~4|datac"
+    Warning (332126): Node "_fire|Add2~6|cout"
+    Warning (332126): Node "_fire|Add2~8|cin"
+    Warning (332126): Node "_fire|Add2~4|combout"
+    Warning (332126): Node "_fire|dead_reset~1|datab"
+    Warning (332126): Node "_fire|fire_X_Pos[9]~2|datad"
+    Warning (332126): Node "_fire|fire_X_Pos[9]~2|combout"
+    Warning (332126): Node "_fire|Add1~16|datad"
+    Warning (332126): Node "_fire|Add1~16|combout"
+    Warning (332126): Node "_fire|LessThan3~2|datac"
+    Warning (332126): Node "_fire|LessThan3~2|combout"
+    Warning (332126): Node "_fire|dead_reset~6|datac"
+    Warning (332126): Node "_fire|fire_X_Pos[7]~4|datad"
+    Warning (332126): Node "_fire|fire_X_Pos[7]~4|combout"
+    Warning (332126): Node "_fire|Add1~12|datab"
+    Warning (332126): Node "_fire|Add1~12|combout"
+    Warning (332126): Node "_fire|LessThan3~2|dataa"
+    Warning (332126): Node "_fire|Add1~12|cout"
+    Warning (332126): Node "_fire|Add1~14|cin"
+    Warning (332126): Node "_fire|Add1~14|combout"
+    Warning (332126): Node "_fire|LessThan3~2|datab"
+    Warning (332126): Node "_fire|Add1~14|cout"
+    Warning (332126): Node "_fire|Add1~16|cin"
+    Warning (332126): Node "_fire|fire_X_Pos[5]~6|datad"
+    Warning (332126): Node "_fire|fire_X_Pos[5]~6|combout"
+    Warning (332126): Node "_fire|Add1~8|dataa"
+    Warning (332126): Node "_fire|Add1~8|combout"
+    Warning (332126): Node "_fire|LessThan3~1|dataa"
+    Warning (332126): Node "_fire|LessThan3~1|combout"
+    Warning (332126): Node "_fire|LessThan3~2|datad"
+    Warning (332126): Node "_fire|Add1~8|cout"
+    Warning (332126): Node "_fire|Add1~10|cin"
+    Warning (332126): Node "_fire|Add1~10|cout"
+    Warning (332126): Node "_fire|Add1~12|cin"
+    Warning (332126): Node "_fire|Add1~10|combout"
+    Warning (332126): Node "_fire|LessThan3~1|datab"
+    Warning (332126): Node "_fire|fire_X_Pos[4]~10|datad"
+    Warning (332126): Node "_fire|fire_X_Pos[4]~10|combout"
+    Warning (332126): Node "_fire|Add1~6|dataa"
+    Warning (332126): Node "_fire|Add1~6|cout"
+    Warning (332126): Node "_fire|Add1~8|cin"
+    Warning (332126): Node "_fire|Add1~6|combout"
+    Warning (332126): Node "_fire|LessThan3~1|datad"
+    Warning (332126): Node "_fire|fire_X_Pos[3]~12|datad"
+    Warning (332126): Node "_fire|fire_X_Pos[3]~12|combout"
+    Warning (332126): Node "_fire|Add1~4|datab"
+    Warning (332126): Node "_fire|Add1~4|combout"
+    Warning (332126): Node "_fire|LessThan3~0|datab"
+    Warning (332126): Node "_fire|LessThan3~0|combout"
+    Warning (332126): Node "_fire|LessThan3~1|datac"
+    Warning (332126): Node "_fire|Add1~4|cout"
+    Warning (332126): Node "_fire|Add1~6|cin"
+    Warning (332126): Node "_fire|fire_X_Pos[2]~14|datad"
+    Warning (332126): Node "_fire|fire_X_Pos[2]~14|combout"
+    Warning (332126): Node "_fire|Add1~2|dataa"
+    Warning (332126): Node "_fire|Add1~2|combout"
+    Warning (332126): Node "_fire|LessThan3~0|datad"
+    Warning (332126): Node "_fire|Add1~2|cout"
+    Warning (332126): Node "_fire|Add1~4|cin"
+    Warning (332126): Node "_fire|fire_Y_Pos[7]~4|datad"
+    Warning (332126): Node "_fire|fire_Y_Pos[5]~6|datad"
+    Warning (332126): Node "_fire|fire_Y_Pos[3]~0|datac"
+    Warning (332126): Node "_fire|fire_X_Pos[9]~2|datac"
+    Warning (332126): Node "_fire|fire_X_Pos[7]~4|datac"
+    Warning (332126): Node "_fire|fire_X_Pos[5]~6|datac"
+    Warning (332126): Node "_fire|fire_X_Pos[4]~10|datab"
+    Warning (332126): Node "_fire|fire_X_Pos[3]~12|datac"
+    Warning (332126): Node "_fire|fire_X_Pos[2]~14|datab"
+Critical Warning (332081): Design contains combinational loop of 117 nodes. Estimating the delays through the loop.
 Warning (332060): Node: Clk was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register lab8_soc:u0|lab8_soc_sdram:sdram|m_addr[0] is being clocked by Clk
-Warning (332060): Node: vga_controller:vga|clkdiv was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register vga_controller:vga|hc[5] is being clocked by vga_controller:vga|clkdiv
-Warning (332060): Node: Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Beginning:_Beginning|State.begin3 is being clocked by Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz
-Warning (332060): Node: Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Fire:_fire|fire_X_Pos[1] is being clocked by Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz
-Warning (332060): Node: vga_controller:vga|vs was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register BG_step[7] is being clocked by vga_controller:vga|vs
-Warning (332060): Node: mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register mario:_mario|Mario_Y_Pos[0] is being clocked by mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz
 Warning (332060): Node: mogu:_mogu|slowClock_5HZ_mogu:Clock_5Hz_mogu|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register mogu:_mogu|State.disappear is being clocked by mogu:_mogu|slowClock_5HZ_mogu:Clock_5Hz_mogu|Clk_5Hz
+Warning (332060): Node: vga_controller:vga|vs was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register BG_step[0] is being clocked by vga_controller:vga|vs
+Warning (332060): Node: Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Fire:_fire|State.move1 is being clocked by Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz
+Warning (332060): Node: mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register mario:_mario|Mario_Y_Pos[0] is being clocked by mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz
+Warning (332060): Node: vga_controller:vga|clkdiv was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register vga_controller:vga|vs is being clocked by vga_controller:vga|clkdiv
 Warning (332060): Node: KEY[0] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch dead_times[3]~26 is being clocked by KEY[0]
+    Info (13166): Latch dead_times[7]~6 is being clocked by KEY[0]
 Warning (332060): Node: Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Kuba:_kuba|kuba_Y_Pos[9] is being clocked by Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz
-Warning (332060): Node: ending:_ending|slowClock_5HZ_ending:Clock_5Hz_ending|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register ending:_ending|is_on~_emulated is being clocked by ending:_ending|slowClock_5HZ_ending:Clock_5Hz_ending|Clk_5Hz
+    Info (13166): Register Kuba:_kuba|kuba_X_Pos[1]~_emulated is being clocked by Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz
+Warning (332060): Node: Princess:_Princess|slowClock_5HZ_princess:Clock_5Hz_princess|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Princess:_Princess|State.stand is being clocked by Princess:_Princess|slowClock_5HZ_princess:Clock_5Hz_princess|Clk_5Hz
+Warning (332060): Node: Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Beginning:_Beginning|State.begin3 is being clocked by Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
@@ -1467,26 +1586,26 @@ Critical Warning (332168): The following clock transfers have no clock uncertain
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332146): Worst-case setup slack is 46.002
+Info (332146): Worst-case setup slack is 45.965
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    46.002               0.000 altera_reserved_tck 
+    Info (332119):    45.965               0.000 altera_reserved_tck 
 Info (332146): Worst-case hold slack is 0.340
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.340               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 48.285
+Info (332146): Worst-case recovery slack is 48.418
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    48.285               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 1.170
+    Info (332119):    48.418               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.980
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.170               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 49.629
+    Info (332119):     0.980               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.623
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.629               0.000 altera_reserved_tck 
+    Info (332119):    49.623               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1494,7 +1613,7 @@ Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 3
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.333
-    Info (332114): Worst Case Available Settling Time: 197.139 ns
+    Info (332114): Worst Case Available Settling Time: 196.965 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -1505,24 +1624,24 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: Clk was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register lab8_soc:u0|lab8_soc_sdram:sdram|m_addr[0] is being clocked by Clk
-Warning (332060): Node: vga_controller:vga|clkdiv was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register vga_controller:vga|hc[5] is being clocked by vga_controller:vga|clkdiv
-Warning (332060): Node: Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Beginning:_Beginning|State.begin3 is being clocked by Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz
-Warning (332060): Node: Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Fire:_fire|fire_X_Pos[1] is being clocked by Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz
-Warning (332060): Node: vga_controller:vga|vs was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register BG_step[7] is being clocked by vga_controller:vga|vs
-Warning (332060): Node: mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register mario:_mario|Mario_Y_Pos[0] is being clocked by mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz
 Warning (332060): Node: mogu:_mogu|slowClock_5HZ_mogu:Clock_5Hz_mogu|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register mogu:_mogu|State.disappear is being clocked by mogu:_mogu|slowClock_5HZ_mogu:Clock_5Hz_mogu|Clk_5Hz
+Warning (332060): Node: vga_controller:vga|vs was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register BG_step[0] is being clocked by vga_controller:vga|vs
+Warning (332060): Node: Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Fire:_fire|State.move1 is being clocked by Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz
+Warning (332060): Node: mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register mario:_mario|Mario_Y_Pos[0] is being clocked by mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz
+Warning (332060): Node: vga_controller:vga|clkdiv was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register vga_controller:vga|vs is being clocked by vga_controller:vga|clkdiv
 Warning (332060): Node: KEY[0] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch dead_times[3]~26 is being clocked by KEY[0]
+    Info (13166): Latch dead_times[7]~6 is being clocked by KEY[0]
 Warning (332060): Node: Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Kuba:_kuba|kuba_Y_Pos[9] is being clocked by Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz
-Warning (332060): Node: ending:_ending|slowClock_5HZ_ending:Clock_5Hz_ending|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register ending:_ending|is_on~_emulated is being clocked by ending:_ending|slowClock_5HZ_ending:Clock_5Hz_ending|Clk_5Hz
+    Info (13166): Register Kuba:_kuba|kuba_X_Pos[1]~_emulated is being clocked by Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz
+Warning (332060): Node: Princess:_Princess|slowClock_5HZ_princess:Clock_5Hz_princess|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Princess:_Princess|State.stand is being clocked by Princess:_Princess|slowClock_5HZ_princess:Clock_5Hz_princess|Clk_5Hz
+Warning (332060): Node: Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Beginning:_Beginning|State.begin3 is being clocked by Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
@@ -1532,26 +1651,26 @@ Critical Warning (332168): The following clock transfers have no clock uncertain
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Fall) to altera_reserved_tck (Fall) (setup and hold)
-Info (332146): Worst-case setup slack is 46.209
+Info (332146): Worst-case setup slack is 46.271
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    46.209               0.000 altera_reserved_tck 
+    Info (332119):    46.271               0.000 altera_reserved_tck 
 Info (332146): Worst-case hold slack is 0.305
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.305               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 48.440
+Info (332146): Worst-case recovery slack is 48.566
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    48.440               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 1.068
+    Info (332119):    48.566               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.904
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.068               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 49.658
+    Info (332119):     0.904               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.648
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.658               0.000 altera_reserved_tck 
+    Info (332119):    49.648               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1559,7 +1678,7 @@ Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 3
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.333
-    Info (332114): Worst Case Available Settling Time: 197.384 ns
+    Info (332114): Worst Case Available Settling Time: 197.227 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -1568,24 +1687,24 @@ Info (332114): Report Metastability: Found 3 synchronizer chains.
 Info: Analyzing Fast 1200mV 0C Model
 Warning (332060): Node: Clk was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register lab8_soc:u0|lab8_soc_sdram:sdram|m_addr[0] is being clocked by Clk
-Warning (332060): Node: vga_controller:vga|clkdiv was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register vga_controller:vga|hc[5] is being clocked by vga_controller:vga|clkdiv
-Warning (332060): Node: Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Beginning:_Beginning|State.begin3 is being clocked by Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz
-Warning (332060): Node: Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Fire:_fire|fire_X_Pos[1] is being clocked by Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz
-Warning (332060): Node: vga_controller:vga|vs was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register BG_step[7] is being clocked by vga_controller:vga|vs
-Warning (332060): Node: mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register mario:_mario|Mario_Y_Pos[0] is being clocked by mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz
 Warning (332060): Node: mogu:_mogu|slowClock_5HZ_mogu:Clock_5Hz_mogu|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register mogu:_mogu|State.disappear is being clocked by mogu:_mogu|slowClock_5HZ_mogu:Clock_5Hz_mogu|Clk_5Hz
+Warning (332060): Node: vga_controller:vga|vs was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register BG_step[0] is being clocked by vga_controller:vga|vs
+Warning (332060): Node: Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Fire:_fire|State.move1 is being clocked by Fire:_fire|slowClock_5HZ_fire:Clock_5Hz_fire|Clk_5Hz
+Warning (332060): Node: mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register mario:_mario|Mario_Y_Pos[0] is being clocked by mario:_mario|slowClock_5HZ:Clock_5Hz_mario|Clk_5Hz
+Warning (332060): Node: vga_controller:vga|clkdiv was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register vga_controller:vga|vs is being clocked by vga_controller:vga|clkdiv
 Warning (332060): Node: KEY[0] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch dead_times[3]~26 is being clocked by KEY[0]
+    Info (13166): Latch dead_times[7]~6 is being clocked by KEY[0]
 Warning (332060): Node: Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Kuba:_kuba|kuba_Y_Pos[9] is being clocked by Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz
-Warning (332060): Node: ending:_ending|slowClock_5HZ_ending:Clock_5Hz_ending|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register ending:_ending|is_on~_emulated is being clocked by ending:_ending|slowClock_5HZ_ending:Clock_5Hz_ending|Clk_5Hz
+    Info (13166): Register Kuba:_kuba|kuba_X_Pos[1]~_emulated is being clocked by Kuba:_kuba|slowClock_5HZ_cuba:Clock_5Hz_kuba|Clk_5Hz
+Warning (332060): Node: Princess:_Princess|slowClock_5HZ_princess:Clock_5Hz_princess|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Princess:_Princess|State.stand is being clocked by Princess:_Princess|slowClock_5HZ_princess:Clock_5Hz_princess|Clk_5Hz
+Warning (332060): Node: Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register Beginning:_Beginning|State.begin3 is being clocked by Beginning:_Beginning|slowClock_5HZ_begin:Clock_5Hz_begin|Clk_5Hz
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
@@ -1595,26 +1714,26 @@ Critical Warning (332168): The following clock transfers have no clock uncertain
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Fall) to altera_reserved_tck (Fall) (setup and hold)
-Info (332146): Worst-case setup slack is 48.494
+Info (332146): Worst-case setup slack is 48.493
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    48.494               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.148
+    Info (332119):    48.493               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.147
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.148               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 49.499
+    Info (332119):     0.147               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 49.559
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.499               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.496
+    Info (332119):    49.559               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.425
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.496               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 49.414
+    Info (332119):     0.425               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.424
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.414               0.000 altera_reserved_tck 
+    Info (332119):    49.424               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1622,7 +1741,7 @@ Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 3
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.333
-    Info (332114): Worst Case Available Settling Time: 198.795 ns
+    Info (332114): Worst Case Available Settling Time: 198.721 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -1630,10 +1749,10 @@ Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 118 warnings
-    Info: Peak virtual memory: 5055 megabytes
-    Info: Processing ended: Thu Dec 10 12:13:46 2020
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 237 warnings
+    Info: Peak virtual memory: 5064 megabytes
+    Info: Processing ended: Wed Dec 16 13:09:30 2020
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:17
 
 
